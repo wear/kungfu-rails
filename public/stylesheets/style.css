@@ -1,0 +1,49 @@
+body{
+	font-size:arial;
+}
+#container{
+	width:749px;
+	margin:0 auto;
+}         
+
+#logo{
+	text-align:center;
+}    
+
+#menu{
+   padding-left:50px;
+} 
+
+
+#menu ul li{  
+	float:left;
+	list-style:none;
+}         
+
+#menu ul li a{  
+	color:#C72327; 
+	border-right:1px solid #CCC;
+	display:block;
+	padding:10px;
+	font-size:18px;
+	text-decoration: none;  
+}
+
+#content{ 
+	padding:20px 0px;
+	clear:both; 
+	font-family:'宋体';
+}   
+
+#content h1{ 
+	color:#F26723;
+	margin:10px 0px;
+	border-bottom:3px solid #cccccc;
+}
+
+#footer {
+	border-top:3px solid #eee;
+	text-align:center; 
+	padding-top:10px;
+	font-size:12px;
+}
