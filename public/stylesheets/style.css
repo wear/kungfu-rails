@@ -3,7 +3,7 @@ body{
 	background: url(/images/background.jpg) repeat-x;
 }
 
-img,div { behavior:url(/iepngfix.htc)};    
+img, div { behavior: url(/javascripts/iepngfix.htc) } /* IE hack for PNG transparency*/ 
 
 a:link{
    color:#F26723;
@@ -12,7 +12,8 @@ a:link{
 
 a:hover{
 	text-decoration: underline;
-}
+} 
+
 #container{
 	width:749px;
 	margin:0 auto;
