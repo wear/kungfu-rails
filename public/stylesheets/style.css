@@ -1,5 +1,15 @@
 body{
 	font-size:arial;
+	background: url(/images/background.jpg) repeat-x;
+}   
+
+a:link{
+   color:#F26723;
+   text-decoration: none; 
+}  
+
+a:hover{
+	text-decoration: underline;
 }
 #container{
 	width:749px;
@@ -20,13 +30,18 @@ body{
 	list-style:none;
 }         
 
-#menu ul li a{  
+#menu a{  
 	color:#C72327; 
-	border-right:1px solid #CCC;
+	border-right:1px solid #F26723;
 	display:block;
 	padding:10px;
 	font-size:18px;
 	text-decoration: none;  
+} 
+
+#menu a:hover{
+	background:#C72327;
+	color:#FFFFFF;
 }
 
 #content{ 
@@ -36,13 +51,13 @@ body{
 }   
 
 #content h1{ 
-	color:#F26723;
+	padding-left:10px;
 	margin:10px 0px;
-	border-bottom:3px solid #cccccc;
+	border-bottom:1px solid #C72327;
 }
 
 #footer {
-	border-top:3px solid #eee;
+	border-top:1px solid #eee;
 	text-align:center; 
 	padding-top:10px;
 	font-size:12px;
