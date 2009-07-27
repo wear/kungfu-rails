@@ -1,7 +1,9 @@
 body{
 	font-size:arial;
 	background: url(/images/background.jpg) repeat-x;
-}   
+}
+
+img,div { behavior:url(/iepngfix.htc)};    
 
 a:link{
    color:#F26723;
