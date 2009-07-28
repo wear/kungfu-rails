@@ -3,7 +3,7 @@ body{
 	background: url(/images/background.jpg) repeat-x;
 }
 
-img, div { behavior: url(/javascripts/iepngfix.htc) } /* IE hack for PNG transparency*/ 
+img, div { behavior: url(/iepngfix.htc) } /* IE hack for PNG transparency*/ 
 
 a:link{
    color:#F26723;
