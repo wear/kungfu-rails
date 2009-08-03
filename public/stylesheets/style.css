@@ -3,7 +3,6 @@ body{
 	background: url(/images/background.jpg) repeat-x;
 }
 
-
 a:link{
    color:#F26723;
    text-decoration: none; 
@@ -56,7 +55,9 @@ a:hover{
 #content{ 
 	padding:20px 0px;
 	clear:both; 
-}   
+}
+
+#content img{border:0px;margin:10px;}     
 
 #content h1{
 	clear:both; 
