@@ -1,5 +1,5 @@
 body{
-	font-size:arial;
+	font-family:Verdana,"宋体";
 	background: url(/images/background.jpg) repeat-x;
 }
 
@@ -23,7 +23,7 @@ a:hover{
 }    
 
 #menu{
-   padding-left:50px;
+   padding-left:120px;
 } 
 
 
@@ -32,13 +32,15 @@ a:hover{
 	list-style:none;
 }         
 
-#menu a{  
+#menu a{ 
+	font-weight:bold; 
 	color:#C72327; 
 	border-right:1px solid #F26723;
 	display:block;
 	padding:10px;
 	font-size:18px;
-	text-decoration: none;  
+	text-decoration: none;
+
 } 
 
 #menu a:hover{
@@ -46,21 +48,46 @@ a:hover{
 	color:#FFFFFF;
 }
 
+#menu li.current a{
+	background:#C72327;
+	color:#FFFFFF;
+}
+
 #content{ 
 	padding:20px 0px;
 	clear:both; 
-	font-family:'宋体';
 }   
 
-#content h1{ 
+#content h1{
+	clear:both; 
+	font-size:24px;
+	font-family:'arial'; 
 	padding-left:10px;
-	margin:10px 0px;
-	border-bottom:1px solid #C72327;
+	margin:20px 0px 10px 0px;
+	border-bottom:1px solid #F26723;
 }
 
-#footer {
+#footer {     
+	clear:both;
 	border-top:1px solid #eee;
 	text-align:center; 
 	padding-top:10px;
 	font-size:12px;
 }
+
+#notify{
+	float:right;
+}
+              
+.datetime{  
+   font-family:'宋体';  
+   font-weight:bold;
+   font-size:14px;
+   position:relative;
+   top: -80px; left: -110px;
+}
+
+.bio img{
+	float:left;
+	margin:0px 10px 1px 0px;
+}  
