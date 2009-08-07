@@ -1,2 +1,104 @@
+<% content_for :headers do -%>
+<style type="text/css" media="screen">
+	ol
+	{
+		margin:0;
+		padding: 0 1.5em;
+	}
+
+	table
+	{
+		color:#FFF;
+		background:#C00;
+		border-collapse:collapse;
+		width:647px;
+		border:5px solid #900;
+	}
+
+	thead
+	{
+
+	}
+
+	thead th
+	{
+		padding:1em 1em .5em;
+	 	border-bottom:1px dotted #FFF;
+	 	font-size:120%;
+	 	text-align:left;
+	}
+
+
+
+	thead tr
+	{
+
+	}
+
+	td
+	{
+		padding:.5em 1em;
+	}
+
+
+
+	tbody tr.odd td
+	{
+		background:transparent url(/images/tr_bg.png) repeat top left;
+	}
+
+	tfoot
+	{
+
+	}
+
+	tfoot td
+	{
+
+		padding-bottom:1.5em;
+	}
+
+	tfoot tr
+	{
+
+	}
+
+
+	* html tr.odd td
+	{
+		background:#C00;
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/tr_bg.png', sizingMethod='scale');
+	}
+
+
+	#middle
+	{
+		background-color:#900;
+	}
+	
+</style>
+<% end -%>
 <h1>会议流程</h1>
-内容添加中
+<table style='margin-left:60px'>
+<col>
+<col id="middle">
+<col>
+<thead>
+
+	<tr><th>时间</th><th>主题</th><th>演讲人</th></tr>
+</thead>
+<tfoot>
+	<tr><td colspan="3"><ol>
+		<li>此表内容随时添加中.</li>
+		</ol></td></tr>
+</tfoot>
+<tbody> 
+		<tr><td>milk</td><td>1 quart</td><td>2 quart</td></tr>
+		<tr class="odd"><td>cinna</td><td>2</td><td>1</td></tr>
+		<tr><td colspan="3" style='text-align:center'>午餐/茶歇</td></tr> 
+		<tr><td>milk</td><td>1 quart</td><td>2 quart</td></tr>
+		<tr class="odd"><td>cinna</td><td>2</td><td>1</td></tr>
+</tbody>
+</table>
+
+

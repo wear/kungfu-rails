@@ -1,5 +1,5 @@
 body{
-	font-family:Verdana,"宋体";
+	font: .8em "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
 	background: url(/images/background.jpg) repeat-x;
 }
 
@@ -93,4 +93,3 @@ a:hover{
 	margin:0px 10px 1px 0px;
 }  
 
-.bio p{ font-size:12px;}
