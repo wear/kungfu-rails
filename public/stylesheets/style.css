@@ -1,6 +1,6 @@
 body{
 	font: .8em "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
-	background: url(/images/background.jpg) repeat-x;
+    background: url(/images/background.jpg) repeat-x; 
 }
 
 a:link{
@@ -93,3 +93,5 @@ a:hover{
 	margin:0px 10px 1px 0px;
 }  
 
+#demo{display:block;width:400px;height:335px;}
+#demo{float:left;}
