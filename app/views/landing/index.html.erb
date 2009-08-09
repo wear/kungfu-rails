@@ -1,5 +1,32 @@
-
-	<h1>会议介绍</h1>   
+<% content_for :headers do -%>
+	<link rel="stylesheet" href="/stylesheets/slider.css" type="text/css" media="screen" /> 
+	<%= javascript_include_tag 'jquery' %>   
+	<%= javascript_include_tag 'easySlider1.7' %>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function(){	
+			$("#slider").easySlider({
+				auto: true, 
+				continuous: true,
+				pause:	4000,
+				nextId: "slider1next",
+				prevId: "slider1prev"
+			});
+		});
+	</script> 
+<% end -%>
+	<h1>会议介绍</h1>  
+	<!-- Slideshow HTML -->
+	<div id="slider-content">   
+		 <div id="slider">
+				<ul>				
+					<li><%=image_tag 'rubyconfchina-1.jpg'%></li>
+					<li><%=image_tag 'rubyconfchina-2.jpg'%></li>
+					<li><%=image_tag 'rubyconfchina-3.jpg'%></li>
+					<li><%=image_tag 'rubyconfchina-4.jpg'%></li>		
+				</ul>
+		</div>
+	</div>
+	<!-- Slideshow HTML --> 
 	<div style='float:right;margin:10px;padding:10px;border:1px solid #ccc;'> 
 		<h3>加入此邮件组获得最新消息</h3>
 		<table border=0 style="background-color: #fff; padding: 5px;" cellspacing=0>
@@ -15,7 +42,7 @@
 	 </div>   
 	    <p>Rubyonrails作为一门新兴的网络编程语言，在国内已经有数年的发展时间了。有越来越 
 		多的公司和个人开始使用它.它适合于快速/低成本的实现创意,是敏捷开发领域的最佳实践.</p> 
-		<p>为了推动国内rubyonrails的发展，shanghaionrails技术讨论组携手上海沙路网络科技有限公司将在<b>10月24号举办功夫rails - 中国rails开发者大会。</b></p>这次会议的口号是ʼ与Rails核心团队同步ʼ.<b>届时将有多位国际国内的rails专家出席,其中也包括来自rails核心团队的成员</b>.</p>本次会议是国内唯一的主题为ruby/rails的大型会议,通过它你能了解到rails,特别是rails3的最新动态.也能获得与众多ruby/rails开发者面对面交流机的会,同时也是与ruby/rails厂商展示产品/服务,招揽人才的最佳时机. </p>
+		<p>为了推动国内rubyonrails的发展，shanghaionrails技术讨论组携手上海沙路网络科技有限公司将在<b>10月24号举办功夫rails - 中国rails开发者大会。</b></p>这次会议的口号是ʼ与Rails核心团队同步ʼ.<b>届时将有多位国际国内的rails专家出席,其中也包括来自rails核心团队的成员</b>.</p>本次会议是国内唯一的主题为ruby/rails的大型会议,通过它你能了解到rails3的最新动态.也能获得与众多ruby/rails开发者面对面交流机的会,同时也是与ruby/rails厂商展示产品/服务,招揽人才的最佳时机. </p>
 		
 	<h1>演讲嘉宾</h1>
 	<div class='bio'>
