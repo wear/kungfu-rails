@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.sponsors '/sponsors', :controller => 'landing', :action => 'sponsors'
   map.schedule '/schedule', :controller => 'landing', :action => 'schedule'
   map.tickets '/tickets', :controller => 'landing', :action => 'tickets'
-  map.orgnize '/orgnize', :controller => 'landing', :action => 'orgnize'
+  map.orgnize '/organize', :controller => 'landing', :action => 'organize'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

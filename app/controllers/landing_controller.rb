@@ -12,8 +12,8 @@ class LandingController < ApplicationController
     @section = 'tickets'
   end  
   
-  def orgnize
-    @section = 'orgnize'
+  def organize
+    @section = 'organize'
   end 
   
   def sponsors
