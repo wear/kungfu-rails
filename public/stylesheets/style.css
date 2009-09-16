@@ -1,6 +1,7 @@
 body{
 	font-family: 微软雅黑,新宋体,华文宋体,sans-serif;   
-	font-size:12px;
+	font-size:14px; 
+	line-height:16px;
     background: url(/images/background.jpg) repeat-x; 
 }
 
