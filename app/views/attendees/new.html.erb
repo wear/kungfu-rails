@@ -1,0 +1,95 @@
+<h1><%= t :registion %></h1>
+<div class='reg_form'>
+<% form_for(@attendee) do |f| %>
+  <%= f.error_messages %>
+  <legend></legend>
+  <fieldset>
+  <p>
+    <%= f.label :name, t(:name) %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email, t(:email) %>
+    <%= f.text_field :email %>
+  </p>
+  
+  <p>
+    <%= f.label :phone_number, t('phone') %>
+    <%= f.text_field :phone_number %>
+  </p>
+  
+  <p>
+    <%= f.label :company, t('company') %>
+    <%= f.text_field :company %>
+  </p>
+  
+  <p>
+    <%= f.label :title, t(:title) %>
+    <%= f.select :title, Attendee::TITLES.map{|title| t(title)}, {:include_blank => t(:choose_title)} %>
+  </p>
+  
+  <p>
+    <%= f.label :company_category, t(:company_category) %>
+    <%= f.select :company_category, Attendee::COMPANY_CATEGORIES.map{|c| t(c)}, {:include_blank => t(:choose_company_category)} %>
+  </p>
+  
+  <p>
+    <%= f.label :company_size, t(:company_size) %>
+    <%= f.select :company_size, Attendee::COMPANY_SIZES, {:include_blank => t(:choose_company_size)} %>
+  </p>
+  
+  <p>
+    <%= f.label :industry, t(:industry) %>
+    <%= f.select :industry, Attendee::INDUSTRIES.map{|i| t(i)}, {:include_blank => t(:choose_industry)} %>
+  </p>
+  
+  <p>
+    <%= f.label :work_experience, t(:work_experience) %>
+    <%= f.select :work_experience, Attendee::WORK_EXPERIENCES, {:include_blank => t(:choose_work_experience)} %>
+  </p>
+  
+  <p>
+    <%= f.label :ruby_experience, t(:ruby_experience) %>
+    <%= f.select :ruby_experience, Attendee::RUBY_EXPERIENCES, {:include_blank => t(:choose_ruby_experience)} %>
+  </p>
+  
+  <p>
+    <%= f.label :city, t(:city) %>
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state, t('state') %>
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.label :country, t('country') %>
+    <%= localized_country_select_tag "attendee[country]","CN"%>
+  </p>
+  
+  <p>
+    <%= f.label :website, t('website') %>
+    <%= f.text_field :website %>
+  </p>
+  
+  <p>
+    <%= f.label :interesting, t(:interesting) %>
+    <%= f.text_field :interesting %>
+  </p>
+  
+  <p>
+    <%= f.label :description, t('description') %>
+    <%= f.text_area :description %>
+  </p>      
+  <center>
+    <p>                                      
+	<% if params[:locale] == 'en' -%>
+      <%= image_submit_tag '/images/submit_en.gif', :class => 'image-submit' %>
+	<% else -%>                    
+	  <%= image_submit_tag '/images/submit_cn.gif', :class => 'image-submit' %>
+	<% end %>
+    </p>
+  </center>
+  </fieldset>
+
+<% end %>
+</div>

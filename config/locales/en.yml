@@ -2,4 +2,82 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  home: "Home" 
+  about: "About"
+  sponsor: "Sponsors"
+  diamond_sponsor: 'Diamond Sponsors'
+  platinum_sponsor: 'Platinum Sponsors'
+  golden_sponsor: 'Golden Sponsors'
+  silver_sponsor: 'Silver Sponsors'
+  partner: 'Partners'
+  speaker: "Speakers"
+  event_date: "May 21st,2009"
+  location: "Shanghai China"
+  venue: "Shanghai Everbright Convention & Exhibition Center"
+  address: "(2F, 66 Caobao Road, Xuhui district, Shanghai, China)"
+  loc: "Venue"
+  register: "Register"
+  thanks: 'Thanks'
+  signup_success: "Thanks for your interesting on this meeting, we've received your application. Please check your mailbox on May 10, we'll send ticket to every attendee according to FIFO."
+  email: 'Email *'
+  name: 'Name *'
+  city: 'City *' 
+  state: 'State *'
+  country: 'Country *' 
+  company: 'Company *'
+  title: 'Title *'
+  choose_title: 'Please choose your title'
+  CTO: 'CTO'
+  project_manager: 'Project manager'
+  architect: 'Architect'
+  senior_engineer: 'Senior engineer'
+  engineer: 'Engineer'
+  student: 'Student'
+  company_category: 'Company category *'
+  choose_company_category: 'Please choose your company category'
+  foreign_company: 'Foreign company'
+  private_company: 'Private company'
+  state_owned_company: 'State-owned company'
+  company_size: 'Company size *'
+  choose_company_size: 'Please choose your company size'
+  industry: 'Industry *'
+  choose_industry: 'Please choose industry'
+  web: 'Web'
+  profession_software: 'Profession software'
+  erp: 'ERP'
+  game_development: 'Game development'
+  media: 'Media'
+  e_commerce: 'E-Commerce'
+  other: 'Other'
+  work_experience: 'Work experience *'
+  choose_work_experience: 'Please choose your work experience'
+  ruby_experience: 'Ruby experience *'
+  choose_ruby_experience: 'Please choose your ruby experience'
+  interesting: 'Interesting'
+  registion: 'Register'
+  website: Website/Blog
+  phone: Phone number *
+  submit: submit
+  description: Descript yourself
+  orgnizer: Orgnizer
+  be_sponsor: List here  
+  contact: Contact
+  pro: Program 
+  contact_us: Contact Us
+  sponsorship: sponsorship
+  orgnizer:  Orgnizer
+  oversea: Us/Europe 
+  cn: China
+  ja: Japan
+  robbin: Robbin fan
+  yuanyi: Yuanyi zhang
+  ouspec: ouspec
+  koz: Koz Masumitsu
+  scott: Scott Ballantyne
+  email: E-mail *
+  tel: Tel
+  mob: Mob
+  help: any help
+  contact_orgnizer: Contact orgnizer
+  action: "We are now open for register, so"
+  now: now 

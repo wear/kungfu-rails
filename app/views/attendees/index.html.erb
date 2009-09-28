@@ -1,0 +1,41 @@
+<h1>All registers</h1>
+
+<p>
+  Total registers: <%= Attendee.count %>
+</p>
+
+<%= will_paginate @attendees %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Paid</th>
+    <th>Title</th>
+    <th>Company</th>
+    <th>Company Size</th>
+    <th>Company Category</th>
+    <th>Industry</th>
+    <th>Work experience</th>
+    <th>Phone number</th>
+    <th>City</th>
+  </tr>
+
+<% @attendees.each do |attendee| %>
+  <tr>
+    <td><%=h attendee.name %></td>
+    <td><%=h attendee.email %></td>
+    <td><%=h attendee.paid ? '已支付' : '未支付' %></td>
+    <td><%=h attendee.title %></td>
+    <td><%=h attendee.company %></td>
+    <td><%=h attendee.company_size %></td>
+    <td><%=h attendee.company_category %></td>
+    <td><%=h attendee.industry %></td>
+    <td><%=h attendee.work_experience %></td>
+    <td><%=h attendee.phone_number %></td>
+    <td><%=h attendee.city %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @attendees %>

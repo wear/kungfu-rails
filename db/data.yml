@@ -1,0 +1,100 @@
+
+--- 
+attendees: 
+  columns: 
+  - id
+  - name
+  - email
+  - website
+  - company
+  - phone_number
+  - city
+  - state
+  - country
+  - created_at
+  - updated_at
+  - description
+  - company_category
+  - industry
+  - company_size
+  - title
+  - work_experience
+  - ruby_experience
+  - interesting
+  - generated_at
+  - paid
+  records: 
+  - - "1"
+    - !binary |
+      5rWL6K+V
+
+    - zhangyuanyi@gmail.com
+    - ""
+    - sand
+    - "13482598953"
+    - shanghai
+    - adfasdf
+    - CN
+    - 2009-09-28 07:09:18
+    - 2009-09-28 08:18:51
+    - ""
+    - !binary |
+      5aSW5LyB
+
+    - !binary |
+      5aqS5L2T
+
+    - < 10
+    - CTO
+    - "> 10 years"
+    - "> 3 years"
+    - ""
+    - 2009-09-28 08:17:20
+    - true
+
+--- 
+roles: 
+  columns: 
+  - id
+  - title
+  records: 
+  - - "1"
+    - superuser
+
+--- 
+roles_users: 
+  columns: 
+  - role_id
+  - user_id
+  records: 
+  - - "1"
+    - "1"
+
+--- 
+users: 
+  columns: 
+  - id
+  - login
+  - name
+  - email
+  - crypted_password
+  - salt
+  - created_at
+  - updated_at
+  - remember_token
+  - remember_token_expires_at
+  - activation_code
+  - activated_at
+  records: 
+  - - "1"
+    - admin
+    - ""
+    - admin@zaituu.com
+    - c1bb645f075203da5c6746306fa1dddfee168504
+    - a7667e585a96f1f2fad1e3fc49b1a4a546beda83
+    - 2009-09-28 08:24:03
+    - 2009-09-28 08:26:29
+    - 
+    - 
+    - 
+    - 2009-09-28 08:26:05

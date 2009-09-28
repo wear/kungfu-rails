@@ -1,4 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :attendees, :member => {:start_pay => :get, :finish_pay => :get, :check => :get}
+  
+  map.resource :session
+  
+  map.reg 'signup', :action => 'new', :controller => 'attendees'    
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  map.login '/login', :controller => 'sessions', :action => 'new'
+  map.register '/register', :controller => 'users', :action => 'create'
+  map.signup '/signup', :controller => 'users', :action => 'new'
+  map.resources :users
   
   map.sponsors '/sponsors', :controller => 'landing', :action => 'sponsors'
   map.schedule '/schedule', :controller => 'landing', :action => 'schedule'

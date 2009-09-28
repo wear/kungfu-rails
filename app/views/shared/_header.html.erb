@@ -9,8 +9,9 @@
 	<ul> 
 		<%= topnav_tab('首页', :url => root_path ,:section => 'home') %>
 		<%= topnav_tab('议程介绍', :url => schedule_path ,:section => 'schedule') %>
-		<%= topnav_tab('参会指南', :url => tickets_path ,:section => 'tickets') %>  
-		<%= topnav_tab('赞助者', :url => sponsors_path ,:section => 'sponsors') %>
+		<%= topnav_tab('参会指南', :url => tickets_path ,:section => 'tickets') %>
+		<%= topnav_tab('报名', :url => new_attendee_path ,:section => 'register') %>
+		<%= topnav_tab('赞助商', :url => sponsors_path ,:section => 'sponsors') %>
 		<%= topnav_tab('组织者', :url => orgnize_path ,:section => 'organize',:style => 'border-right:none;') %>
 	</ul>
 </div>

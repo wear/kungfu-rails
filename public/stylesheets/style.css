@@ -59,13 +59,14 @@ a:hover{
 	clear:both; 
 }
 
-#content img{border:0px;margin:10px;}     
+#content img{border:0px;margin:10px;}
 
 #content h1{
 	clear:both; 
 	font-size:24px;
 	font-family:'arial'; 
 	padding-left:10px;
+	padding-bottom:10px;
 	margin:20px 0px 10px 0px;
 	border-bottom:1px solid #F26723;
 }
@@ -97,3 +98,66 @@ a:hover{
 
 #demo{display:block;width:400px;height:335px;}
 #demo{float:left;}
+
+/* register form */
+fieldset {
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  width: 500px;         
+  border: 3px solid #EFEFEF;
+  background-color: #FFFFFF;
+}
+
+fieldset label {
+  display:block;
+  float:left;
+  width: 125px;
+  text-align: right;
+  height: 1.3em;
+  padding: 2px 10px;
+  color: #00AA00;
+}
+
+fieldset input {
+  background-color: #DBFDFF;
+  border-left: 1px solid #EFEFEF;
+  height: 16px;
+}
+
+fieldset select{  
+	border-left: 1px solid #EFEFEF;
+  font-size:14px;
+  background-color: #DBFDFF;   
+  width:290px;
+  margin-top: 0px;
+}
+
+#attendee_description{
+	width:320px;
+	height:120px;
+	background-color: #DBFDFF;
+  border-left: 1px solid #EFEFEF;   
+}
+
+.reg_form{
+	margin-left:100px;
+}
+
+.image-submit{
+	width:113px;
+	height:28px;
+	border:none;
+}
+
+a.button {
+  display: block;
+  width:137px;
+  height:28px;
+  background:url(/images/button.gif) no-repeat center;
+  line-height:24px;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align:center;
+  padding-top: 3px;
+  text-decoration: none; 
+}

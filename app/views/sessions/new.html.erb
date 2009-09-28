@@ -1,0 +1,20 @@
+<h1>请先登录</h1>
+<div class='reg_form'>
+<% form_tag session_path do -%>
+<legend></legend>
+<fieldset>
+<p><%= label_tag '用户名' %>
+<%= text_field_tag 'login', @login %></p>
+
+<p><%= label_tag '密码' %>
+<%= password_field_tag 'password', nil %></p>
+
+<!-- Uncomment this if you want this functionality
+<p><%= label_tag 'remember_me', 'Remember me' %>
+<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+-->
+
+<p><center><%= submit_tag '登录', :class => 'button' %></center></p>
+</fieldset>
+<% end -%>
+</div>

@@ -19,5 +19,4 @@ class LandingController < ApplicationController
   def sponsors
     @section = 'sponsors'
   end
-
 end
