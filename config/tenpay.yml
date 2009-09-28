@@ -1,9 +1,0 @@
-test:
-  spid: '1900000109'
-  key: '8934e7d15453e97507ef794cf7b0519d'
-development:
-  spid: '1204784001'
-  key: '34f3045f66100f5c61091c7dc7c09ad6'
-production:
-  spid: '1204784001'
-  key: '34f3045f66100f5c61091c7dc7c09ad6'
