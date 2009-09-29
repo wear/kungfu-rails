@@ -23,6 +23,9 @@ attendees:
   - interesting
   - generated_at
   - paid
+  - invoice_address
+  - need_invoice
+  - invoice_header
   records: 
   - - "1"
     - !binary |
@@ -51,6 +54,125 @@ attendees:
     - ""
     - 2009-09-28 08:17:20
     - true
+    - 
+    - false
+    - 
+  - - "2"
+    - asdfaf
+    - asdf@aaadf.com
+    - ""
+    - asdf
+    - adf
+    - asdf
+    - asdf
+    - CN
+    - 2009-09-29 06:48:34
+    - 2009-09-29 06:48:34
+    - ""
+    - !binary |
+      56eB6JCl5LyB5Lia
+
+    - !binary |
+      5LqS6IGU572R
+
+    - < 10
+    - !binary |
+      6aG555uu57uP55CG
+
+    - 1-3 years
+    - < 1 year
+    - ""
+    - 
+    - false
+    - 
+    - false
+    - 
+  - - "3"
+    - yzhang
+    - zhangyuanyi@gmail.com
+    - ""
+    - asdf
+    - asdf
+    - city
+    - asdf
+    - CN
+    - 2009-09-29 07:07:51
+    - 2009-09-29 07:07:51
+    - ""
+    - !binary |
+      5aSW5LyB
+
+    - !binary |
+      5Lyg57uf6KGM5Lia6L2v5Lu2
+
+    - 10 - 50
+    - !binary |
+      6aG555uu57uP55CG
+
+    - 1-3 years
+    - 1-3 years
+    - ""
+    - 
+    - false
+    - 
+    - false
+    - 
+  - - "4"
+    - aasdf
+    - zhangyuanyi@gmail.com
+    - ""
+    - asdf
+    - asdf
+    - city
+    - asdf
+    - CN
+    - 2009-09-29 07:19:21
+    - 2009-09-29 07:19:21
+    - ""
+    - !binary |
+      5aSW5LyB
+
+    - !binary |
+      5LqS6IGU572R
+
+    - < 10
+    - CTO
+    - < 1 year
+    - < 1 year
+    - ""
+    - 
+    - false
+    - 
+    - false
+    - 
+  - - "5"
+    - aasdf
+    - zhangyuanyi@gmail.com
+    - ""
+    - asdf
+    - asdf
+    - city
+    - asdf
+    - CN
+    - 2009-09-29 07:21:18
+    - 2009-09-29 07:21:18
+    - ""
+    - !binary |
+      5aSW5LyB
+
+    - !binary |
+      5LqS6IGU572R
+
+    - < 10
+    - CTO
+    - < 1 year
+    - < 1 year
+    - ""
+    - 
+    - false
+    - 
+    - false
+    - 
 
 --- 
 roles: 
