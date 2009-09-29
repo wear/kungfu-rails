@@ -67,6 +67,21 @@
   </p>
   
   <p>
+    <%= f.label :need_invoice, '是否需要发票' %>
+    <%= f.text_field :need_invoice %>
+  </p>
+  
+  <p>
+    <%= f.label :invoice_header, '发票抬头' %>
+    <%= f.text_field :invoice_header %>
+  </p>
+  
+  <p>
+    <%= f.label :invoice_address, '发票邮寄地址' %>
+    <%= f.text_field :invoice_address, :size => '60' %>
+  </p>
+  
+  <p>
     <%= f.label :website, t('website') %>
     <%= f.text_field :website %>
   </p>

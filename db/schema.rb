@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(:version => 20090420130416) do
     t.string   "work_experience"
     t.string   "ruby_experience"
     t.string   "interesting"
+    t.boolean  "need_invoice"
+    t.string   "invoice_header"
+    t.string   "invoice_address"
     
     t.datetime "generated_at"
     t.boolean  "paid", :default => false
