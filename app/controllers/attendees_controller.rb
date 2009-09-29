@@ -63,7 +63,7 @@ class AttendeesController < ApplicationController
         tenpay_request = Tenpay::Request.new( 
                 'KungfuRails 2009大会门票',
                 @attendee.id,
-                '1',
+                '10000',
                 finish_pay_attendee_url(@attendee, :host => request.host_with_port),
                 request.remote_ip
                 )
