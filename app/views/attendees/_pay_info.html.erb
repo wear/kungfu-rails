@@ -1,0 +1,54 @@
+<h1>注册成功</h1>
+
+<% content_for :headers do %>
+  <%= stylesheet_link_tag 'facebox' %>
+  <%= javascript_include_tag "jquery" %>
+  <%= javascript_include_tag "facebox" %>
+<% end %>
+<p>
+  非常感谢您对本次会议的关注，我们已经收到您的参会信息，并给您发送了一封确认邮件。
+</p>
+<p>
+  您的订单号为：<strong><%= '%010d' % @attendee.id %></strong>
+</p>
+
+<h4>方式一：财付通在线付款</h4>
+<p>如果您有财付通帐户或者网上银行，可以通过财付通在线支付直接付款给我们：</p>，
+<p>
+  <center><%= link_to '通过财付通支付', start_pay_attendee_path(@attendee), :class => 'button', :id => 'start_pay', :target => '_blank' %></center>
+</p>
+
+<h4>方式二：通过淘宝购买</h4>
+<p>如果您有淘宝帐户，也可以选择通过淘宝网进行购买：</p>
+<p>
+  <center><%= link_to '进入淘宝网购买页面', 'http://item.taobao.com/auction/item_detail.jhtml?x_id=0db1&item_id=d39425d03bdafd83e0c43f0c96437829', :class => 'button', :target => '_blank' %></center>
+</p>
+
+<h4>方式三：银行汇款</h4>
+<p>您也可以通过银行直接转账给我们，以下为帐户信息</p>
+<p>帐户号：9555 5002 1679 0641<br />
+  收款人：张元一<br />
+  开户行：招商银行上海分行漕宝路支行
+</p>
+
+<h4>联系方式</h4>
+<p>如您在付款中遇到任何问题，可通过以下方式联系我们：</p>
+<p>张先生： +8613482598953<br />
+  孔先生：+8615001912259
+</p>
+
+<div id="pay_status" style="display:none;">
+  <div style="">
+    <p style="font-size: 18px;">请在打开的支付窗口中完成支付:</p>
+    <center>
+      <p style="margin: 30px;"><%= link_to '我已完成支付', check_attendee_path(@attendee), :class => 'button' %></p>
+      <p><%= link_to '支付遇到问题？', '#' %></p>
+    </center>
+  </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  jQuery('#start_pay').click(function(){
+    jQuery.facebox($('#pay_status').html());
+  });
+</script>

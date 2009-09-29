@@ -1,3 +1,31 @@
+# == Schema Information
+# Schema version: 20090420130416
+#
+# Table name: attendees
+#
+#  id               :integer         not null, primary key
+#  name             :string(255)
+#  email            :string(255)
+#  website          :string(255)
+#  company          :string(255)
+#  phone_number     :string(255)
+#  city             :string(255)
+#  state            :string(255)
+#  country          :string(255)
+#  created_at       :datetime
+#  updated_at       :datetime
+#  description      :text
+#  company_category :string(255)
+#  industry         :string(255)
+#  company_size     :string(255)
+#  title            :string(255)
+#  work_experience  :string(255)
+#  ruby_experience  :string(255)
+#  interesting      :string(255)
+#  generated_at     :datetime
+#  paid             :boolean
+#
+
 class Attendee < ActiveRecord::Base
   validates_presence_of :name, :email, :city, :state, :country, :company, :title,
                           :company_category, :company_size, :industry, :work_experience,
@@ -14,7 +42,7 @@ class Attendee < ActiveRecord::Base
 
   validates_presence_of     :email
   validates_length_of       :email,    :within => 6..100 #r@a.wk
-  validates_uniqueness_of   :email     
+  #validates_uniqueness_of   :email     
 
   protected
     def make_activation_code

@@ -1,39 +1,8 @@
-<h1><%= t(:thanks) %></h1>
-
 <% if @attendee.paid -%>
+<h1><%= t(:thanks) %></h1>
 <p>
   恭喜，您已经完成了支付，以下是您的参会信息：
 </p>
 <% else %>
-<% content_for :headers do %>
-  <%= stylesheet_link_tag 'facebox' %>
-  <%= javascript_include_tag "jquery" %>
-  <%= javascript_include_tag "facebox" %>
-<% end %>
-<p>
-  我们已经收到您的参会信息，在您完成支付后我们会向您发送会议电子门票及其它参会信息。<br />
-</p>
-<p>
-  您的订单号为：<strong><%= '%010d' % @attendee.id %></strong>
-</p>
-
-<p>
-  <center><%= link_to '立即进行支付', start_pay_attendee_path(@attendee), :class => 'button', :id => 'start_pay', :target => '_blank' %></center>
-</p>
-
-<div id="pay_status" style="display:none;">
-  <div style="">
-    <p style="font-size: 18px;">请在打开的支付窗口中完成支付:</p>
-    <center>
-      <p style="margin: 30px;"><%= link_to '我已完成支付', check_attendee_path(@attendee), :class => 'button' %></p>
-      <p><%= link_to '支付遇到问题？', '#' %></p>
-    </center>
-  </div>
-</div>
-
-<script type="text/javascript" charset="utf-8">
-  jQuery('#start_pay').click(function(){
-    jQuery.facebox($('#pay_status').html());
-  });
-</script>
+<%= render :partial => 'pay_info' %>
 <% end %>

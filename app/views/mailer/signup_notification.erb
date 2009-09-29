@@ -1,0 +1,31 @@
+<p>尊敬的<%= @attendee.name %>:</p>
+
+<p>我们已经收到您参加<a href="http://kungfurails.org">KungfuRails 09</a>会议的参会信息，非常感谢您对本次会议的关注，我们会在您完成支付后向您发送会议电子门票及其它参会信息，您可以通过以下方式完成支付:</p>
+
+<h4>方式一：财付通在线付款</h4>
+<p>如果您有财付通帐户或者网上银行，可以通过财付通在线支付直接付款给我们：</p>，
+<p>
+  <center><%= link_to '通过财付通支付', start_pay_attendee_path(@attendee), :class => 'button', :id => 'start_pay', :target => '_blank' %></center>
+</p>
+
+<h4>方式二：通过淘宝购买</h4>
+<p>如果您有淘宝帐户，也可以选择通过淘宝网进行购买：</p>
+<p>
+  <center><%= link_to '进入淘宝网购买页面', 'http://item.taobao.com/auction/item_detail.jhtml?x_id=0db1&item_id=d39425d03bdafd83e0c43f0c96437829', :class => 'button', :target => '_blank' %></center>
+</p>
+
+<h4>方式三：银行汇款</h4>
+<p>您也可以通过银行直接转账给我们，以下为帐户信息</p>
+<p>帐户号：9555 5002 1679 0641<br />
+  收款人：张元一<br />
+  开户行：招商银行上海分行漕宝路支行
+</p>
+
+<p>如您有任何问题或疑问，欢迎您和我们取得联系。</p>
+
+<p>==================<br />
+KungfuRails 09组委会<br />
+www.kungfurails.com</p>
+
+  
+

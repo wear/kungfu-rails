@@ -38,4 +38,20 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+  
+  config.active_record.observers = :attendee_observer
 end
+
+
+ActionMailer::Base.smtp_settings = {
+   :tls => true,
+   :address => "smtp.gmail.com",
+   :port => "587",
+   :domain => "kungfurails.com",
+   :authentication => :plain,
+   :user_name => "support@kungfurails.com",
+   :password => "tellmewhy"
+ }
+ 
+ExceptionNotifier.exception_recipients = %w(team@zoomtype.info)
+ExceptionNotifier.sender_address =  %("Application Error" <noreply@zoomtype.info>)
