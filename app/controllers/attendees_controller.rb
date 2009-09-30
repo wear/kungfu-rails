@@ -27,7 +27,8 @@ class AttendeesController < ApplicationController
 
   # GET /attendees/new
   # GET /attendees/new.xml
-  def new
+  def new  
+    @step = 1
     @attendee = Attendee.new
 
     respond_to do |format|
@@ -43,7 +44,8 @@ class AttendeesController < ApplicationController
     respond_to do |format|
       if @attendee.save
         format.html { redirect_to(@attendee) }
-      else
+      else 
+        @step = 1 
         format.html { render :action => "new" }
       end
     end
@@ -82,7 +84,8 @@ class AttendeesController < ApplicationController
         
         if query.response.successful?
           flash[:error] = '支付已成功!'
-          @attendee.update_attribute(:paid, true)
+          @attendee.update_attribute(:paid, true) 
+        #  Mailer.deliver_ticket(@attendee)
         else
           flash[:error] = '订单尚未支付!'
         end
@@ -107,7 +110,10 @@ class AttendeesController < ApplicationController
     respond_to do |format| 
       if @attendee && @attendee.paid == false && tenpay_response.successful?
         flash[:notice] = '支付已成功!'
-        @attendee.update_attribute(:paid, true)
+        Attendee.transaction do
+          @attendee.update_attribute(:paid, true) 
+          deviler
+        end
         format.html { redirect_to attendee_path(@attendee) }
       elsif @attendee.nil?
         flash[:error] = '对不起，您查询的订单不存在!'

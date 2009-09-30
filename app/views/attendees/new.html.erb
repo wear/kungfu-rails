@@ -1,9 +1,16 @@
-<h1><%= t :registion %></h1>
+<% content_for :headers do -%>
+<script type="text/javascript" charset="utf-8"> 
+jQuery(document).ready(function($) { 
+    $('.invoce_item').hide();
+}); 
+</script>
+<% end -%>           
+<h1><%= t :registion %></h1> 
+<%= render :partial => '/shared/regnotice'%>
 <div class='reg_form'>
 <% form_for(@attendee) do |f| %>
   <%= f.error_messages %>
-  <legend></legend>
-  <fieldset>
+  <fieldset style='width:529px;'>
   <p>
     <%= f.label :name, t(:name) %>
     <%= f.text_field :name %>
@@ -66,20 +73,6 @@
     <%= localized_country_select_tag "attendee[country]","CN"%>
   </p>
   
-  <p>
-    <%= f.label :need_invoice, '是否需要发票' %>
-    <%= f.text_field :need_invoice %>
-  </p>
-  
-  <p>
-    <%= f.label :invoice_header, '发票抬头' %>
-    <%= f.text_field :invoice_header %>
-  </p>
-  
-  <p>
-    <%= f.label :invoice_address, '发票邮寄地址' %>
-    <%= f.text_field :invoice_address, :size => '60' %>
-  </p>
   
   <p>
     <%= f.label :website, t('website') %>
@@ -94,7 +87,35 @@
   <p>
     <%= f.label :description, t('description') %>
     <%= f.text_area :description %>
-  </p>      
+  </p> 
+  <fieldset class="fieldset"> 
+	<legend>大型自助晚餐会</legend>           
+	<p>为了让与会者能更好的交流,我们会在会议当晚举办一场大型的自助式晚餐会,要参加此餐会,需额外支付50元晚餐会费用.</p>
+  <p>
+    <%= f.label :join_party, '是否参加餐费' %>
+    <%= f.check_box :join_party,{:id => 'party',:onclick => "change_total_fee();" } %>
+  </p>
+  </fieldset> 
+  <fieldset class="fieldset"> 
+	<legend>发票信息</legend> 
+  <p>
+    <%= f.label :need_invoice, '是否需要发票' %>
+    <%= f.check_box :need_invoice,{:id => 'invoce',:onclick => 'invoce_items();' } %>
+  </p>
+  
+  <p class='invoce_item'>
+    <%= f.label :invoice_header, '发票抬头' %>
+    <%= f.text_field :invoice_header %>
+  </p>
+  
+  <p class='invoce_item'>
+    <%= f.label :invoice_address, '发票邮寄地址' %>
+    <%= f.text_field :invoice_address, :size => '48' %>
+  </p> 
+  </fieldset> 
+    <p style='text-align:center;'>
+	<a href='#' id='fee_notice'>费用提示:你需要支付120门票费用,此门票已包含午餐费用.</a>
+  </p>
   <center>
     <p>                                      
 	<% if params[:locale] == 'en' -%>

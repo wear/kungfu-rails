@@ -5,5 +5,14 @@ module ApplicationHelper
     classes << 'current' if options[:section] && (options.delete(:section).to_a.include?(@section))
     
     "<li class='#{classes.join(' ')}'>" + link_to( "<span>"+name+"</span>", options.delete(:url), options) + "</li>"
+  end      
+  
+  def notice(step,page)
+    return 'highlight' if step == page
+  end                 
+  
+  def state_type(type)
+    (type == 'error') ? 'error' : 'highlight'
   end
+  
 end

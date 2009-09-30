@@ -1,8 +1,22 @@
-<% if @attendee.paid -%>
-<h1><%= t(:thanks) %></h1>
-<p>
-  恭喜，您已经完成了支付，我们已将电子门票发送至您的信箱，如您有任何疑问或建议，欢迎您和我们取得联系。
-</p>
+<% if @attendee.paid -%> 
+<h1><%= t(:thanks) %></h1> 
+<% @step = 3 %> 
+<%= render :partial => '/shared/regnotice'%>
+<div id="payment_info"> 
+	<h2>门票购买成功</h2>
+	<p>
+	  恭喜，您已经完成了支付，我们已将电子门票发送至您的信箱，如您有任何疑问或建议，欢迎您和我们取得联系。
+	</p>
+	<p>
+		<h4>联系方式</h4>
+		<p>如您在付款中遇到任何问题，可通过以下方式联系我们：</p>
+  		<p>
+			电子邮件: support@kungfurails.com <br />
+			电话:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13482598953张元一<br />
+		</p>
+	<p>
+</div>
+
 <% else %>
 <%= render :partial => 'pay_info' %>
 <% end %>

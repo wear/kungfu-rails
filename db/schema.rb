@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20090420130416) do
     t.boolean  "need_invoice"
     t.string   "invoice_header"
     t.string   "invoice_address"
-    
+    t.boolean  "join_party"
     t.datetime "generated_at"
     t.boolean  "paid", :default => false
   end

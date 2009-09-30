@@ -1,5 +1,7 @@
-<% content_for :headers do -%>
+<% if false -%>
+<% content_for :headers do -%>  
 	<link rel="stylesheet" href="/stylesheets/slider.css" type="text/css" media="screen" /> 
+
 	<%= javascript_include_tag 'jquery' %>   
 	<%= javascript_include_tag 'easySlider1.7' %>
 	<script type="text/javascript" charset="utf-8">
@@ -13,8 +15,10 @@
 			});
 		});
 	</script> 
+<% end -%> 
 <% end -%>
-	<h1>会议介绍</h1>  
+	<h1>会议介绍</h1>     
+	<% if false %>
 	<!-- Slideshow HTML -->
 	<div id="slider-content">   
 		 <div id="slider">
@@ -27,19 +31,20 @@
 		</div>
 	</div>
 	<!-- Slideshow HTML --> 
-	<div style='float:right;margin:10px;padding:10px;border:1px solid #ccc;'> 
-		<h3>加入此邮件组获得最新消息</h3>
-		<table border=0 style="background-color: #fff; padding: 5px;" cellspacing=0>
-		  <form action="http://groups.google.com/group/shanghaionrails/boxsubscribe">
-		  <input type=hidden name="hl" value="en">
-		  <tr>
-			<td style="padding-left: 2px;">
-		  Email: <input type=text name=email>
-		  <input type=submit name="sub" value="Subscribe">
-		  </td></tr>
-		</form>
-		</table>
-	 </div>   
+	<% end -%>  
+	<h2>大会开始售票</h2>
+	<p>为了<a href='#'>提升大会的质量</a>,同时也为了能给与会者提供更好的服务,本次大会不同于rubyconfchina的完全免费方式,本会大会将对参会者<a href='#'>收取一定的费用</a>.我们保证所有的门票收入将用于<a href='#'>确保大会的正常举办和社区的日常运作</a>.</p>
+	<p>门票的价格为<a href='#'>120元人民币</a>,如果在21号之前支付,将能减免20元.<br />
+		为了让与会者能更好的交流,我们会在会议<a href='#'>当晚举办一场大型的自助式晚餐会</a>,要参加此餐会,需<a href='#'>额外支付50元</a>晚餐会费用.</p>
+		<p>马上<%=link_to '报名购买门票',new_attendee_path%></p>
+	<div style='float:right;margin:10px;padding:10px;border:1px solid #ccc;'>
+		<h3>赞助商</h3> 
+		<ul class='logo-list'>
+			<li><%=image_tag('sponsor/github.png',:align => 'left')%></li>
+			<li><%=image_tag('sponsor/joyent-logo.jpg',:align => 'left',:height => '40',:width => '123')%> </li>
+		</ul>
+	 </div>
+	<h2>大会介绍</h2>   
 	    <p>Rubyonrails作为一门新兴的网络编程语言，在国内已经有数年的发展时间了。有越来越 
 		多的公司和个人开始使用它.它适合于快速/低成本的实现创意,是敏捷开发领域的最佳实践.</p> 
 		<p>为了推动国内rubyonrails的发展，shanghaionrails技术讨论组携手上海沙路网络科技有限公司将在<b>10月24号举办功夫rails - 中国rails开发者大会。</b></p>这次会议的口号是ʼ与Rails核心团队同步ʼ.<b>届时将有多位国际国内的rails专家出席,其中也包括来自rails核心团队的成员</b>.</p>本次会议是国内唯一的主题为ruby/rails的大型会议,通过它你能了解到rails3的最新动态.也能获得与众多ruby/rails开发者面对面交流机的会,同时也是与ruby/rails厂商展示产品/服务,招揽人才的最佳时机. </p>
