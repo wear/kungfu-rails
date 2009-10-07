@@ -1,6 +1,6 @@
 module AttendeesHelper
   def total_fee(attendee)
-     attendee.join_party ? 0 : 0
+     attendee.join_party ? 170 : 120
   end  
   
   def discount_price(price)
