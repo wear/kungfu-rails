@@ -39,11 +39,13 @@ class Attendee < ActiveRecord::Base
   WORK_EXPERIENCES   = ['< 1 year', '1-3 years', '3-5 years', '5-10 years', '> 10 years']
   RUBY_EXPERIENCES   = ['< 1 year', '1-3 years', '> 3 years']
                                                     
-  validates_presence_of     :name
-
+  validates_presence_of     :name          
+  validates_uniqueness_of   :name
+  validates_length_of       :name,    :within => 2..40
+  
   validates_presence_of     :email
-  validates_length_of       :email,    :within => 6..100 #r@a.wk
-  #validates_uniqueness_of   :email   
+  validates_length_of       :email,    :within => 6..100 #r@a.wk   
+  validates_uniqueness_of   :email
   
   before_create :make_slug_url       
   
