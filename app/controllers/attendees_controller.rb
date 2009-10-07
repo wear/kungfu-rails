@@ -93,7 +93,7 @@ class AttendeesController < ApplicationController
         tenpay_request = Tenpay::Request.new( 
                 'KungfuRails 2009大会门票',
                 @attendee.id,
-                @template.discount_price(@template.total_fee(@attendee)) + '00',
+                @template.discount_price(@template.total_fee(@attendee)),
                 finish_pay_attendee_url(@attendee, :host => request.host_with_port),
                 request.remote_ip
                 )
@@ -113,9 +113,8 @@ class AttendeesController < ApplicationController
         if query.response.successful?
           flash[:error] = '支付已成功!'
           Attendee.transaction do 
-            @attendee.update_attribute(:paid, true)
-            @attendee.build_payment(:paid_count => @template.discount_price(@template.total_fee(@attendee)),:payment_type => 'online') 
-            @attendee.save
+            @attendee.build_payment(:paid_count => @template.discount_price(@template.total_fee(@attendee)),:payment_type => 'online')
+            @attendee.update_attribute(:paid, true) 
           end
         else
           flash[:error] = '订单尚未支付!'
@@ -142,9 +141,8 @@ class AttendeesController < ApplicationController
       if @attendee && @attendee.paid == false && tenpay_response.successful?
         flash[:notice] = '支付已成功!'
         Attendee.transaction do
+          @attendee.build_payment(:paid_count => @template.discount_price(@template.total_fee(@attendee)),:payment_type => 'online')
           @attendee.update_attribute(:paid, true) 
-          @attendee.build_payment(:paid_count => @template.discount_price(@template.total_fee(@attendee)),:payment_type => 'online') 
-          @attendee.save
         end
         format.html { redirect_to attendee_path(@attendee) }
       elsif @attendee.nil?
