@@ -7,12 +7,13 @@
 <% @step = 2 %> 
 <%= render :partial => '/shared/regnotice'%>     
 
-<div id="payment_info"> 
+<div id="payment_info">  
+	
 <h2>您的参会编号</h2>
-<p>
-我们已经收到您参加<a href="http://kungfurails.org" target='_blank'>KungfuRails 09</a>会议的参会信息,我们也给您的邮箱发送了确认信息.
+<p>   
+	你好<%=h @attendee.name %>,感谢您参加<a href="http://kungfurails.org" target='_blank'>KungfuRails 09</a>。
   <br />您的参会编号为：<strong><%= '%04d' % @attendee.id %></strong> <br />
-  我们会在您完成支付后向您发送会议电子门票及其它参会信息。<br />请您选择付费方式付费
+  您的<strong>待支付金额为<%=total_fee(@attendee)%>¥</strong><small>(10月21号之前支付优惠20元)</small><br />我们会在您完成支付后向您发送会议电子门票及其它参会信息。<br />
 </p>
 <h2>付费方式</h2>
 <h4>方式一：财付通在线付款</h4>
@@ -20,20 +21,25 @@
 
 <h4>方式二：通过淘宝购买</h4>
 <p>如果您有淘宝帐户，也可以选择通过淘宝网进行购买.<%= link_to '进入淘宝网购买页面', 'http://item.taobao.com/auction/item_detail.jhtml?x_id=0db1&item_id=d39425d03bdafd83e0c43f0c96437829',:target => '_blank' %> </p>
-
+<small>(请在汇款人信息里注明你的用户名和参会编号)</small>  
 
 <h4>方式三：银行汇款</h4>
 <p>您也可以通过银行直接转账给我们，以下为帐户信息</p>
 <p>帐户号：9555 5002 1679 0641<br />
   收款人：张元一<br />
-  开户行：招商银行上海分行漕宝路支行
+  开户行：招商银行上海分行漕宝路支行<br />
+  <small>(请在汇款人信息里注明你的用户名和参会编号)</small>
 </p>
 
-<h4>联系方式</h4>
+<h4>方式四：现场付款</h4>
+<p>您也可选择在会议现场直接付款.但为了大会能够顺利成功的进行,请尽量选择提前在线支付或者汇款.</p>
+</p>
+
+<h2>联系方式</h2>
 <p>如您在付款中遇到任何问题，可通过以下方式联系我们：</p>
 <p>
 	电子邮件: support@kungfurails.com <br />
-	电话:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13482598953张元一<br />
+	电话:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13482598953(张元一)<br />
 </p>
 
 <div id="pay_status" style="display:none;">

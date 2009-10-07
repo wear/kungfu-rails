@@ -116,7 +116,8 @@ fieldset {
   -webkit-border-radius: 13px;
   width: 500px;         
   border: 3px solid #EFEFEF;
-  background-color: #FFFFFF;
+  background-color: #FFFFFF; 
+  padding:10px;
 }
 
 fieldset label {
@@ -219,3 +220,12 @@ a.button {
 	margin:0px;
 	padding:0px;
 }
+
+/* TABLES */
+
+table.sortable { width:100%;font-size:12px; }
+table.sortable tr.odd { background-color: #FAFAFA; }
+table.sortable tr.even { background-color: #EEEEEE; }
+table.sortable tbody tr:hover { background-color: #CCCCCC; }
+table.sortable td { padding: 4px; }
+table.sortable th { padding: 4px; white-space: nowrap;}

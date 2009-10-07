@@ -1,39 +1,42 @@
+<% content_for :headers do %>
+  <%= stylesheet_link_tag 'facebox' %>
+  <%= javascript_include_tag "facebox" %>
+  <script type="text/javascript" charset="utf-8">
+  	jQuery(document).ready(function($) {
+	  $('a[rel*=facebox]').facebox()
+	})
+  </script>
+<% end %>
+
 <h1>All registers</h1>
-
-<p>
-  Total registers: <%= Attendee.count %>
-</p>
-
+<div style='text-align:center;'> <h3>目前共有<%=Attendee.count%>人注册,<%=Attendee.all_join_party.count%>参加自助餐会,<%=Attendee.all_paided.count%>人已付款</h3>
+</div>
 <%= will_paginate @attendees %>
 
-<table>
-  <tr>
+<table class='sortable'>
+  <tr>  
+	<th>ID</th>
     <th>Name</th>
-    <th>Email</th>
-    <th>Paid</th>
     <th>Title</th>
     <th>Company</th>
-    <th>Company Size</th>
-    <th>Company Category</th>
-    <th>Industry</th>
-    <th>Work experience</th>
-    <th>Phone number</th>
     <th>City</th>
+	<th>Invoice</th>
+	<th>Party</th>
+    <th>Paid</th> 
+ 	<th>操作</th>
   </tr>
 
 <% @attendees.each do |attendee| %>
-  <tr>
+  <tr class="<%= cycle :even, :odd %>">
+	<td><%=link_to attendee.id,attendee %></td>
     <td><%=h attendee.name %></td>
-    <td><%=h attendee.email %></td>
-    <td><%=h attendee.paid ? '已支付' : '未支付' %></td>
     <td><%=h attendee.title %></td>
     <td><%=h attendee.company %></td>
-    <td><%=h attendee.company_size %></td>
-    <td><%=h attendee.company_category %></td>
-    <td><%=h attendee.industry %></td>
-    <td><%=h attendee.work_experience %></td>
-    <td><%=h attendee.phone_number %></td>
     <td><%=h attendee.city %></td>
+	<td><%= attendee.need_invoice ? '需要' : '不需要'%></td> 
+	<td><%= attendee.join_party ? '参加' : '不参加'%></td> 
+	<td><%= attendee.paid ? '已支付' : '未支付' %> － <%=link_to('设置支付',edit_payment_attendee_path(attendee),:rel => 'facebox')  %></td>
+	<td><%=link_to '删除',attendee,:confirm => '你确定嘛?',:method => :delete %></td>
   </tr>
 <% end %>
 </table>

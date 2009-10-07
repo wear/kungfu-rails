@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :attendees, :member => {:start_pay => :get, :finish_pay => :get, :check => :get}
+  map.resources :attendees, :member => {:start_pay => :get, :finish_pay => :get, :check => :get,:edit_payment => :get}
   
   map.resource :session
   

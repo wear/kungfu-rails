@@ -1,5 +1,5 @@
 class AttendeesController < ApplicationController
-  include AuthenticatedSystem
+  include AuthenticatedSystem    
   before_filter :login_required, :only => [:index]
   access_control :index => 'superuser'
   before_filter { |c| c.set_section('register') }
@@ -8,8 +8,7 @@ class AttendeesController < ApplicationController
   # GET /attendees.xml
   def index
     @attendees = Attendee.paginate(:page => params[:page], :per_page => 40)
-
-    respond_to do |format|
+    respond_to do |format| 
       format.html # index.html.erb
       format.xml  { render :xml => @attendees }
     end
@@ -18,10 +17,10 @@ class AttendeesController < ApplicationController
   # GET /attendees/1
   # GET /attendees/1.xml
   def show
-    @attendee = Attendee.find(params[:id])
+    @attendee = Attendee.find_by_slug_url(params[:id])
     
     respond_to do |format|
-      format.html # show.html.erb
+      format.html 
     end
   end
 
@@ -43,6 +42,7 @@ class AttendeesController < ApplicationController
 
     respond_to do |format|
       if @attendee.save
+        flash[:notice] = '参会人注册成功,相关信息已发送到您的邮箱!'
         format.html { redirect_to(@attendee) }
       else 
         @step = 1 
@@ -51,8 +51,36 @@ class AttendeesController < ApplicationController
     end
   end
   
+  def update
+    @attendee = Attendee.find_by_slug_url(params[:id])
+    if @attendee.payment.nil?
+      @attendee.build_payment(params[:payment])
+    else
+      @attendee.payment.update_attributes(params[:payment])
+    end
+    
+    respond_to do |wants|
+      if @attendee.payment.save 
+        @attendee.update_attributes(:paid => true)
+        flash[:notice] = '支付修改成功'
+      else
+        flash[:error] = '有错误发生'
+      end
+      wants.html { redirect_to attendees_path }
+    end
+  end 
+  
+  def edit_payment  
+    @attendee = Attendee.find_by_slug_url(params[:id])
+    @payment =  @attendee.payment.nil? ? @attendee.build_payment : @attendee.payment 
+    
+    respond_to do |wants|
+      wants.html { render :layout => false }
+    end
+  end
+  
   def start_pay
-    @attendee = Attendee.find(params[:id])
+    @attendee = Attendee.find_by_slug_url(params[:id])
 	
     respond_to do |format|
       if @attendee.nil?
@@ -65,7 +93,7 @@ class AttendeesController < ApplicationController
         tenpay_request = Tenpay::Request.new( 
                 'KungfuRails 2009大会门票',
                 @attendee.id,
-                '10000',
+                @template.discount_price(@template.total_fee(@attendee)) + '00'
                 finish_pay_attendee_url(@attendee, :host => request.host_with_port),
                 request.remote_ip
                 )
@@ -76,7 +104,7 @@ class AttendeesController < ApplicationController
   end
   
   def check
-    @attendee = Attendee.find(params[:id])
+    @attendee = Attendee.find_by_slug_url(params[:id])
     
     respond_to do |format| 
       if @attendee && @attendee.paid == false
@@ -84,8 +112,11 @@ class AttendeesController < ApplicationController
         
         if query.response.successful?
           flash[:error] = '支付已成功!'
-          @attendee.update_attribute(:paid, true) 
-        #  Mailer.deliver_ticket(@attendee)
+          Attendee.transaction do 
+            @attendee.update_attribute(:paid, true)
+            @attendee.build_payment(:paid_count => @template.discount_price(@template.total_fee(@attendee)),:payment_type => 'online') 
+            @attendee.save
+          end
         else
           flash[:error] = '订单尚未支付!'
         end
@@ -105,14 +136,15 @@ class AttendeesController < ApplicationController
   
   def finish_pay
     tenpay_response = Tenpay::Response.new(params)
-    @attendee = Attendee.find(params[:id])
+    @attendee = Attendee.find_by_slug_url(params[:id])
     
     respond_to do |format| 
       if @attendee && @attendee.paid == false && tenpay_response.successful?
         flash[:notice] = '支付已成功!'
         Attendee.transaction do
           @attendee.update_attribute(:paid, true) 
-          deviler
+          @attendee.build_payment(:paid_count => @template.discount_price(@template.total_fee(@attendee)),:payment_type => 'online') 
+          @attendee.save
         end
         format.html { redirect_to attendee_path(@attendee) }
       elsif @attendee.nil?
@@ -126,5 +158,13 @@ class AttendeesController < ApplicationController
         format.html { redirect_to attendee_path(@attendee) }
       end
     end
+  end  
+  
+  def destroy
+    @attendee = Attendee.find_by_slug_url(params[:id])
+    @attendee.destroy
+     
+    flash[:notice] = '已成功删除'
+    redirect_to attendees_path    
   end
 end

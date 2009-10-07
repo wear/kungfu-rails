@@ -1,0 +1,10 @@
+<h3>设定<%=h @attendee.name%>的支付</h3>
+
+<% form_for @attendee,:html => {:method => :put} do |f| -%> 
+  <% fields_for :payment do |payment| -%>
+  <p><%=payment.label 'paid_count','支付金额'%><br /><%= payment.text_field :paid_count %></p>
+  <p><%=payment.label 'payment_type','支付方式'%><br /><%= payment.select :payment_type,PAYMENT_TYPES, {:include_blank => '选择支付方式'} %></p>  
+<p><%=payment.label 'description',' 描述'%><br /><%= payment.text_area :description,:size => "40x5"%></p>  
+<p><%=submit_tag '确定' %></p>
+<% end -%>
+<% end -%>

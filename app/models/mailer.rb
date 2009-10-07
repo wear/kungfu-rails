@@ -1,4 +1,6 @@
-class Mailer < ActionMailer::Base
+class Mailer < ActionMailer::Base  
+  helper :attendees
+  
   def signup_notification(attendee)
     setup_email(attendee)
     @subject    += '您的参会信息已收到，请尽快完成支付'

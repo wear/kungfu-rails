@@ -30,6 +30,7 @@ class Attendee < ActiveRecord::Base
   validates_presence_of :name, :email, :city, :state, :country, :company, :title,
                           :company_category, :company_size, :industry, :work_experience,
                           :ruby_experience, :phone_number
+  has_one :payment, :class_name => "Payment", :foreign_key => "attendee_id"
 
   COMPANY_CATEGORIES = ['foreign_company', 'private_company', 'state_owned_company']
   COMPANY_SIZES      = ['< 10', '10 - 50', '50 - 100', '100 - 500', '> 500']
@@ -42,11 +43,26 @@ class Attendee < ActiveRecord::Base
 
   validates_presence_of     :email
   validates_length_of       :email,    :within => 6..100 #r@a.wk
-  #validates_uniqueness_of   :email     
+  #validates_uniqueness_of   :email   
+  
+  before_create :make_slug_url       
+  
+  named_scope :all_paided,:conditions => ['paid = ?',true]
+  named_scope :all_join_party,:conditions => ['join_party = ?',true] 
 
-  protected
-    def make_activation_code
-        self.activation_code = self.class.make_token
+  def to_param  # overridden
+    slug_url
+  end
+
+ # protected  
+ 
+    def self.generate_slug(length=6)
+    charactars = ("a".."z").to_a + ("1".."9").to_a
+    (0..length).inject([]) { |password, i| password << charactars[rand(charactars.size-1)] }.join
+    end
+    
+    def make_slug_url
+       self.slug_url = self.class.generate_slug(8) 
     end
     
 end

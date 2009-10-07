@@ -1,25 +1,11 @@
 <p>尊敬的<%= @attendee.name %>:</p>
 
-<p>我们已经收到您参加<a href="http://kungfurails.org">KungfuRails 09</a>会议的参会信息，非常感谢您对本次会议的关注，我们会在您完成支付后向您发送会议电子门票及其它参会信息.</p>
-
-<h2>您的参会编号</h2>
-<p>
+感谢您参加<a href="http://kungfurails.org" target='_blank'>KungfuRails 09</a>。
   <br />您的参会编号为：<strong><%= '%04d' % @attendee.id %></strong> <br />
-  我们会在您完成支付后向您发送会议电子门票及其它参会信息。<br />请您选择付费方式付费
-</p>
-<h2>付费方式</h2>
-<h4>方式一：财付通在线付款</h4>
-<p>如果您有网上银行或者财付通帐户，可以通过财付通在线支付直接付款给我们.<%= link_to '通过财付通支付', start_pay_attendee_path(@attendee),:id => 'start_pay', :target => '_blank' %>  </p>
-
-<h4>方式二：通过淘宝购买</h4>
-<p>如果您有淘宝帐户，也可以选择通过淘宝网进行购买.<%= link_to '进入淘宝网购买页面', 'http://item.taobao.com/auction/item_detail.jhtml?x_id=0db1&item_id=d39425d03bdafd83e0c43f0c96437829',:target => '_blank' %> </p>
-
-
-<h4>方式三：银行汇款</h4>
-<p>您也可以通过银行直接转账给我们，以下为帐户信息</p>
-<p>帐户号：9555 5002 1679 0641<br />
-  收款人：张元一<br />
-  开户行：招商银行上海分行漕宝路支行
+  您的<strong>待支付金额为<%=total_fee(@attendee)%>¥：</strong><small>(10月21号之前支付优惠20元)</small><br />我们会在您完成支付后向您发送会议电子门票及其它参会信息。<br />
+</p>   
+<p>
+   <strong>付款方式:<%=link_to APP_URL + "/attendees/" + @attendee.slug_url,APP_URL + "/attendees/" + @attendee.slug_url %></strong>
 </p>
 
 <p>如您有任何问题或疑问，欢迎您和我们取得联系。</p>

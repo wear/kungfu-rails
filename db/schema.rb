@@ -22,8 +22,18 @@ ActiveRecord::Schema.define(:version => 20090420130416) do
     t.string   "invoice_header"
     t.string   "invoice_address"
     t.boolean  "join_party"
-    t.datetime "generated_at"
+    t.datetime "generated_at" 
+    t.string   "slug_url"
     t.boolean  "paid", :default => false
+  end 
+  
+  create_table "payments", :force => true do |t|   
+    t.integer  "attendee_id"     
+    t.integer "paid_count"
+    t.string  "description"
+    t.text  "payment_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
   
   create_table "roles", :force => true do |t|
