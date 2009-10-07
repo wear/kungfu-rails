@@ -38,14 +38,18 @@ class Attendee < ActiveRecord::Base
   INDUSTRIES         = ['web', 'profession_software', 'erp', 'game_development', 'media', 'e_commerce', 'other']
   WORK_EXPERIENCES   = ['< 1 year', '1-3 years', '3-5 years', '5-10 years', '> 10 years']
   RUBY_EXPERIENCES   = ['< 1 year', '1-3 years', '> 3 years']
-                                                    
-  validates_presence_of     :name          
+  
+  email_name_regex  = '[\w\.%\+\-]+'.freeze
+  domain_head_regex = '(?:[A-Z0-9\-]+\.)+'.freeze
+  domain_tld_regex  = '(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|jobs|museum)'.freeze
+                                                       
   validates_uniqueness_of   :name
   validates_length_of       :name,    :within => 2..40
+  validates_format_of       :name,    :with => /\A[^[:cntrl:]\\<>\/&]*\z/,  :message => '格式不正确'
   
-  validates_presence_of     :email
   validates_length_of       :email,    :within => 6..100 #r@a.wk   
   validates_uniqueness_of   :email
+  validates_format_of       :email,    :with => /\A#{email_name_regex}@#{domain_head_regex}#{domain_tld_regex}\z/i, :message => '格式不正确'
   
   before_create :make_slug_url       
   
