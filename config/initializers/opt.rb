@@ -3,4 +3,6 @@ PAYMENT_TYPES = [
   ['淘宝','taobao'],
   ['银行汇款','bank'],
   ['会议现场付款','desk']
-  ]    
+  ]         
+  
+TICKET_PRICE = 2

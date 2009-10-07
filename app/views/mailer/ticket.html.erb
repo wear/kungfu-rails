@@ -1,0 +1,23 @@
+<p>尊敬的<%= @attendee.name %>:</p>
+<p>
+   您的门票已经购买成功!
+</p>
+<p>您的参会名称为:<strong><%=h @attendee.name %></strong><br />参会编号为:<strong><%= '%04d' % @attendee.id %></strong></p>此门票<b>已包含午餐<% if @attendee.join_party -%>和会议当天晚餐会<% end -%>的费用</b>.</p>
+<p>
+请您在会议当天<a href='#'>凭注册名称和参会编号准时参会</a>。
+</p>   
+
+<% if @attendee.need_invoice -%>
+<p> 
+	注:我们会在会后向您邮递发票。
+</p>
+<% end -%>       
+
+<p>如您有任何问题或疑问，欢迎您和我们取得联系。</p>
+
+<p>==================<br />
+KungfuRails 09组委会<br />
+www.kungfurails.com</p>
+
+  
+

@@ -142,14 +142,15 @@ class AttendeesController < ApplicationController
         flash[:notice] = '支付已成功!'
         Attendee.transaction do
           @attendee.build_payment(:paid_count => @template.discount_price(@template.total_fee(@attendee)),:payment_type => 'online')
-          @attendee.update_attribute(:paid, true) 
+          @attendee.update_attribute(:paid, true)
+          Mailer.deliver_ticket(@attendee) 
         end
         format.html { redirect_to attendee_path(@attendee) }
       elsif @attendee.nil?
         flash[:error] = '对不起，您查询的订单不存在!'
         format.html { redirect_to new_attendee_path }
       elsif @attendee.paid
-        flash[:error] = '您已经支付过此订单'
+        flash[:error] = '您已支付过此订单'
         format.html { redirect_to attendee_path(@attendee) }
       else
         flash[:error] = '支付遇到问题？'

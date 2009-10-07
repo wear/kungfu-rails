@@ -13,7 +13,7 @@
 <p>   
 	你好<%=h @attendee.name %>,感谢您参加<a href="http://kungfurails.org" target='_blank'>KungfuRails 09</a>。
   <br />您的参会编号为：<strong><%= '%04d' % @attendee.id %></strong> <br />
-  您的<strong>待支付金额为<%=total_fee(@attendee)%>¥</strong><small>(10月21号之前支付优惠20元)</small><br />我们会在您完成支付后向您发送会议电子门票及其它参会信息。<br />
+  您的<strong>待支付金额为<%=total_fee(@attendee).to_f/100%>¥</strong><small>(10月21号之前支付优惠20元)</small><br />我们会在您完成支付后向您发送会议电子门票及其它参会信息。<br />
 </p>
 <h2>付费方式</h2>
 <h4>方式一：财付通在线付款</h4>
