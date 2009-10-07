@@ -30,7 +30,7 @@ class Attendee < ActiveRecord::Base
   validates_presence_of :name, :email, :city, :state, :country, :company, :title,
                           :company_category, :company_size, :industry, :work_experience,
                           :ruby_experience, :phone_number
-  has_one :payment, :class_name => "Payment", :foreign_key => "attendee_id"
+  has_one :payment, :class_name => "Payment", :foreign_key => "attendee_id", :dependent => :destroy 
 
   COMPANY_CATEGORIES = ['foreign_company', 'private_company', 'state_owned_company']
   COMPANY_SIZES      = ['< 10', '10 - 50', '50 - 100', '100 - 500', '> 500']
