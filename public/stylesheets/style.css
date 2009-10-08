@@ -234,3 +234,8 @@ table.sortable tr.even { background-color: #EEEEEE; }
 table.sortable tbody tr:hover { background-color: #CCCCCC; }
 table.sortable td { padding: 4px; }
 table.sortable th { padding: 4px; white-space: nowrap;}
+
+.space{
+  background-color: #DBFDFF;
+  font-weight:bold;
+}
