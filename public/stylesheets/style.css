@@ -8,7 +8,12 @@ body{
 a:link{
    color:#F26723;
    text-decoration: none; 
-}  
+}     
+
+h3.annonce{
+	text-align:center;
+	color:#CC0000;
+}
 
 a:hover{
 	text-decoration: underline;

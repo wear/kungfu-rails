@@ -5,4 +5,4 @@ PAYMENT_TYPES = [
   ['会议现场付款','desk']
   ]         
   
-TICKET_PRICE = 2
+TICKET_PRICE = 12000

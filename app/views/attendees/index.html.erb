@@ -9,8 +9,8 @@
 <% end %>
 
 <h1>All registers</h1>
-<div style='text-align:center;'> <h3>目前共有<%=Attendee.count%>人注册,<%=Attendee.all_join_party.count%>参加自助餐会,<%=Attendee.all_paided.count%>人已付款</h3>
-</div>
+<h3 class='annonce'>目前共有<%=Attendee.count%>人注册,<%=Attendee.all_join_party.count%>参加自助餐会,<%=Attendee.all_paided.count%>人已付款</h3>
+
 <%= will_paginate @attendees %>
 
 <table class='sortable'>
