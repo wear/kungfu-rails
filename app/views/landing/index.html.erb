@@ -1,42 +1,12 @@
-<% if false -%>
-<% content_for :headers do -%>  
-	<link rel="stylesheet" href="/stylesheets/slider.css" type="text/css" media="screen" /> 
 
-	<%= javascript_include_tag 'jquery' %>   
-	<%= javascript_include_tag 'easySlider1.7' %>
-	<script type="text/javascript" charset="utf-8">
-		$(document).ready(function(){	
-			$("#slider").easySlider({
-				auto: true, 
-				continuous: true,
-				pause:	4000,
-				nextId: "slider1next",
-				prevId: "slider1prev"
-			});
-		});
-	</script> 
-<% end -%> 
-<% end -%>
 	<h1>会议介绍</h1>     
-	<% if false %>
-	<!-- Slideshow HTML -->
-	<div id="slider-content">   
-		 <div id="slider">
-				<ul>				
-					<li><%=image_tag 'rubyconfchina-1.jpg'%></li>
-					<li><%=image_tag 'rubyconfchina-2.jpg'%></li>
-					<li><%=image_tag 'rubyconfchina-3.jpg'%></li>
-					<li><%=image_tag 'rubyconfchina-4.jpg'%></li>		
-				</ul>
-		</div>
-	</div>
-	<!-- Slideshow HTML --> 
-	<% end -%>  
 	<h2>大会开始售票</h2>
 	<p>为了<a href='#'>提升大会的质量</a>,同时也为了能给与会者提供更好的服务,本次大会不同于rubyconfchina的完全免费方式,本会大会将对参会者<a href='#'>收取一定的费用</a>.我们保证所有的门票收入将用于<a href='#'>确保大会的正常举办和社区的日常运作</a>.</p>
 	<p>门票的价格为<a href='#'>120元人民币</a>,如果在21号之前支付,将能减免20元.<br />
 		为了让与会者能更好的交流,我们会在会议<a href='#'>当晚举办一场大型的自助式晚餐会</a>,要参加此餐会,需<a href='#'>额外支付50元</a>晚餐会费用.</p>
-		<p>马上<%=link_to '报名购买门票',new_attendee_path%></p>
+		<p><b>现在报名将有机会获得Joyent提供的价值$375的accelerator帐号</b><br /> 
+			马上<%=link_to '报名购买门票',new_attendee_path%> 
+			</p> 
 	<div style='float:right;margin:10px;padding:10px;border:1px solid #ccc;'>
 		<h3>赞助商</h3> 
 		<ul class='logo-list'>
