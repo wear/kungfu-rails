@@ -60,8 +60,8 @@ class AttendeesController < ApplicationController
     end
     
     respond_to do |wants|
-      if @attendee.payment.save 
-        @attendee.update_attributes(:paid => true)
+      if @attendee.payment.save && @attendee.update_attributes(:paid => true) 
+        Mailer.deliver_ticket(@attendee)
         flash[:notice] = '支付修改成功'
       else
         flash[:error] = '有错误发生'
