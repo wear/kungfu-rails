@@ -1,12 +1,17 @@
 <h1>厂商赞助</h1> 
 <div class='sponsors'>
 	<h4>Github</h4>  
-	<%=image_tag('sponsor/github.png',:align => 'left')%>
+	<%=link_to image_tag('sponsor/github.jpg',:align => 'left'),'http://www.github.com',:target => '_blank'%>
 	<p>
 	 GitHub is for Public Open Source and Private Business Code
-	</p>  
+	</p> 
+	<h4>In-src</h4>
+	<%=link_to image_tag('sponsor/insrc.jpg',:align => 'left'),'http://in-src.com/',:target => '_blank'%> 
+	<p >
+	Beijing's Leading Ruby on Rails Consulting
+	</p>
 	<h4>Joyent</h4>
-	<%=image_tag('sponsor/joyent-logo.jpg',:align => 'left',:height => '40',:width => '123')%> 
+	<%=link_to image_tag('sponsor/joyent-logo.jpg',:align => 'left',:height => '40',:width => '123'),'http://www.joyent.com',:target => '_blank'%>
 	<p >
 	Joyent's Proven Cloud Hosting Infrastructure and sophisticated Cloud Management Software enable you to leverage benefits of both the Public and Private Cloud
 	</p>
