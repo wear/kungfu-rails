@@ -31,7 +31,8 @@ We push the china ruby&rails community forward!!
 <p>
 	电子邮件: support@kungfurails.com <br />
 	电话:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13482598953(张元一)<br />
-</p>
+</p>              
+<% if false %>
 <h1>我们运作过的会议</h1>  
 <p>
  <b>Rubyconfchina</b>,
@@ -47,12 +48,14 @@ We push the china ruby&rails community forward!!
 		</div>
 	</div>
 	<!-- Slideshow HTML -->
-</p>    
+</p>
+<% end -%>    
 <h1>大会特别合作伙伴</h1>
+<%=image_tag('tengu.jpg')%>
 无锡天狗软件开发有限公司
 <h1>媒体合作伙伴</h1>   
  <%=link_to image_tag('javaeye.gif'),'http://www.javaeye.com',:target => '_blank'%> <%=link_to image_tag('infoq.jpg'),'http://www.infoq.com/cn',:target => '_blank'%> 
-<h1>特别感谢</h1> 
+<h1>特别感谢</h1>           
 Kungfurails需要感谢以下公司和个人的帮助  
 <ul>
 <li>ruby空间由<%= link_to 'zoomtype','http://www.zoomtype.info',:target => '_blank'%>提供</li>
