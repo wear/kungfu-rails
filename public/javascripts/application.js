@@ -18,7 +18,7 @@ function change_total_fee(){
 	      }
 		else
 		 {
-		  	$('#fee_notice').text('费用提示:你需要支付120购买门票,此门票已包含午餐费用');
+		  	$('#fee_notice').text('费用提示:你需要支付120元购买门票,此门票已包含午餐费用');
 		 }
 	})
 };

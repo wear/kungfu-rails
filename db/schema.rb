@@ -23,7 +23,8 @@ ActiveRecord::Schema.define(:version => 20090420130416) do
     t.string   "invoice_address"
     t.boolean  "join_party"
     t.datetime "generated_at" 
-    t.string   "slug_url"
+    t.string   "slug_url"  
+    t.integer  "number",:default => 1
     t.boolean  "paid", :default => false
   end 
   

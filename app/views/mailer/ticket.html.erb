@@ -2,9 +2,16 @@
 <p>
    您的门票已经购买成功!
 </p>
-<p>您的参会名称为:<strong><%=h @attendee.name %></strong><br />参会编号为:<strong><%= '%04d' % @attendee.id %></strong></p>此门票<b>已包含午餐<% if @attendee.join_party -%>和会议当天晚餐会<% end -%>的费用</b>.</p>
+<p>您的参会名称为:<strong><%=h @attendee.name %></strong><br />
+	参会编号为:<strong><%= '%04d' % @attendee.id %></strong> 
+	<% if @attendee.number > 1 -%>
+	  <br />您购买了:<b><%= @attendee.number %>张门票</b>
+	<% end -%>
+	</p>此门票<b>已包含午餐<% if @attendee.join_party -%>和会议当天晚餐会<% end -%>的费用</b>.</p>
 <p>
-请您在会议当天<%=link_to '凭注册名称和参会编号准时参会',APP_URL + "/tickets"%></a>。
+请您在会议当天<%=link_to '凭注册名称和参会编号准时参会',APP_URL + "/tickets"%></a> <% if @attendee.number > 1 -%>
+,您的同事也凭您的注册名称和参会编号参会,我们将为您预留<%= @attendee.number %>个坐位</b>
+	<% end -%>。
 </p>   
 
 <% if @attendee.need_invoice -%>
