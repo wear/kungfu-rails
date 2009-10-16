@@ -225,10 +225,7 @@ a.button {
 	padding-top:20px;
 }
 
-.logo-list{
-	margin:0px;
-	padding:0px;
-}
+
 
 /* TABLES */
 
@@ -266,3 +263,13 @@ a.buy {
     color: #FAE8BD; }
   a.buy:hover {
     background-color: #2a2; }
+
+.logo-list{  
+	float:right;
+	width:150px;
+   margin:10px;padding:10px;border:1px solid #ccc; 
+}
+
+.logo-list li{
+	float:right;
+}
