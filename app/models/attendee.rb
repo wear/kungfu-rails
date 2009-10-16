@@ -55,12 +55,19 @@ class Attendee < ActiveRecord::Base
   
   before_create :make_slug_url       
   
-  named_scope :all_paided,:conditions => ['paid = ?',true]
-  named_scope :all_join_party,:conditions => ['join_party = ?',true] 
-  
-  def self.count_with_number
+  class << self
+    def count_with_number
      Attendee.find(:all,:select => :number).map(&:number).inject{|sum,n| sum + n}  
-  end
+   end     
+  
+   def all_paided
+     Attendee.find(:all,:select => :number,:conditions => ['paid = ?',true]).map(&:number).inject{|sum,n| sum + n}
+   end
+  
+   def all_join_party
+    Attendee.find(:all,:select => :number,:conditions => ['join_party = ?',true]).map(&:number).inject{|sum,n| sum + n}
+    end 
+  end 
 
 
   def to_param  # overridden
