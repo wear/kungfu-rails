@@ -57,6 +57,11 @@ class Attendee < ActiveRecord::Base
   
   named_scope :all_paided,:conditions => ['paid = ?',true]
   named_scope :all_join_party,:conditions => ['join_party = ?',true] 
+  
+  def self.count_with_number
+     Attendee.find(:all,:select => :number).map(&:number).inject{|sum,n| sum + n}  
+  end
+
 
   def to_param  # overridden
     slug_url
