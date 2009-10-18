@@ -9,7 +9,7 @@
 <% end %>
 
 <h1>All registers</h1>
-<h3 class='annonce'>目前共有<%=Attendee.count%>人注册,<%=Attendee.all_join_party.count%>参加自助餐会,<%=Attendee.all_paided.count%>人已付款</h3>
+<h3 class='annonce'>目前共有<%=Attendee.count_with_number %>人注册,<%=Attendee.all_join_party %>参加自助餐会,<%=Attendee.all_paided %>人已付款</h3>
 
 <%= will_paginate @attendees %>
 
@@ -19,10 +19,12 @@
     <th>Name</th>
     <th>Title</th>
     <th>Company</th>
-    <th>City</th>
+    <th>City</th> 
+	<th>Description</th>
 	<th>Invoice</th>
 	<th>Party</th>
-    <th>Paid</th> 
+    <th>Paid</th>
+	<th>Number</th> 
  	<th>操作</th>
   </tr>
 
@@ -32,10 +34,12 @@
     <td><%=h attendee.name %></td>
     <td><%=h attendee.title %></td>
     <td><%=h attendee.company %></td>
+	<td><%=h attendee.description %></td>
     <td><%=h attendee.city %></td>
 	<td><%= attendee.need_invoice ? '需要' : '不需要'%></td> 
 	<td>><%= attendee.join_party ? '参加' : '不参加'%></td> 
 	<td ><%= attendee.paid ? '已支付' : '未支付' %> － <%=link_to('设置支付',edit_payment_attendee_path(attendee),:rel => 'facebox')  %></td>
+	<td><%=h attendee.number %></td>
 	<td><%=link_to '删除',attendee,:confirm => '你确定嘛?',:method => :delete %></td>
   </tr>
 <% end %>

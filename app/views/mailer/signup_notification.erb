@@ -1,8 +1,13 @@
 <p>尊敬的<%= @attendee.name %>:</p>
 
-感谢您参加<a href="http://kungfurails.org" target='_blank'>KungfuRails 09</a>
-  <br />您的参会编号为:<strong><%= '%04d' % @attendee.id %></strong> <br />
-  您的<strong>待支付金额为:<%=total_fee(@attendee)/100%>¥：</strong><small>(10月21号之前支付优惠20元)</small><br />我们会在您完成支付后向您发送会议电子门票及其它参会信息。<br />
+	感谢您参加<a href="http://kungfurails.org" target='_blank'>KungfuRails 09</a>.以下是您的参会信息。
+  <br />参会编号:<strong><%= '%04d' % @attendee.id %></strong><br />
+是否参加参会: <b><%= @attendee.join_party ? '是' : '否' %></b>
+<% if @attendee.number > 1 -%>
+  <br />  购买张数:<b><%= @attendee.number %>张</b>
+<% end -%>
+<br />
+  您的<strong>待支付金额为:<%=total_fee(@attendee)/100%>¥：</strong><br />我们会在您完成支付后向您发送会议电子门票及其它参会信息。<br />
 </p>   
 <p>
    <strong>付款方式:<%=link_to APP_URL + "/attendees/" + @attendee.slug_url,APP_URL + "/attendees/" + @attendee.slug_url %></strong>

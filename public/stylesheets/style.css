@@ -79,12 +79,16 @@ ul li{list-style:none;}
 
 #content h4{
 	clear:both; 
-	font-size:14px;
-	font-family:'arial'; 
+	font-size:16px;
+	font-family:'宋体'; 
 	padding-left:10px;
 	padding-bottom:10px;
 	margin:20px 0px 10px 0px;
 	border-bottom:1px solid #eee;
+} 
+
+h4.payment{
+	color:#C72327;
 }
 
 #footer {     
@@ -174,17 +178,17 @@ fieldset select{
     font-weight:bold;
 	font-size:18px;
 	padding:10px;
-	background:#FBFBFB; 
+	background:#eee; 
 	text-align:center;
 	padding:40px 20px;
 	margin:5px;  
-	color:#efefef;
+	color:#666;
 	-moz-border-radius: 8px;
   	-webkit-border-radius: 8px;
 } 
 
 .reg_notice ul li.highlight{
-	background:#eee;
+	background:#FFCC00;
 	color:#000;
 }
 
@@ -221,10 +225,7 @@ a.button {
 	padding-top:20px;
 }
 
-.logo-list{
-	margin:0px;
-	padding:0px;
-}
+
 
 /* TABLES */
 
@@ -262,3 +263,13 @@ a.buy {
     color: #FAE8BD; }
   a.buy:hover {
     background-color: #2a2; }
+
+.logo-list{  
+	float:right;
+	width:150px;
+   margin:10px;padding:10px;border:1px solid #ccc; 
+}
+
+.logo-list li{
+	float:right;
+}

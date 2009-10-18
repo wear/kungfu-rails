@@ -50,11 +50,25 @@ class Attendee < ActiveRecord::Base
   validates_length_of       :email,    :within => 6..100 #r@a.wk   
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => /\A#{email_name_regex}@#{domain_head_regex}#{domain_tld_regex}\z/i, :message => '格式不正确'
+  validates_presence_of :number
+   validates_numericality_of :number,:less_than => 100
   
   before_create :make_slug_url       
   
-  named_scope :all_paided,:conditions => ['paid = ?',true]
-  named_scope :all_join_party,:conditions => ['join_party = ?',true] 
+  class << self
+    def count_with_number
+     Attendee.find(:all,:select => :number).map(&:number).inject{|sum,n| sum + n}  
+   end     
+  
+   def all_paided
+     Attendee.find(:all,:select => :number,:conditions => ['paid = ?',true]).map(&:number).inject{|sum,n| sum + n}
+   end
+  
+   def all_join_party
+    Attendee.find(:all,:select => :number,:conditions => ['join_party = ?',true]).map(&:number).inject{|sum,n| sum + n}
+    end 
+  end 
+
 
   def to_param  # overridden
     slug_url

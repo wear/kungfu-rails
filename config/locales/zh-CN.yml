@@ -202,6 +202,7 @@
           ruby_experience: Ruby经验
           interesting: 兴趣爱好
           title: 职位
+          number: 购买张数
     errors:
       template:
         header: 

@@ -14,8 +14,7 @@ class Mailer < ActionMailer::Base
   protected
     def setup_email(attendee)
       @recipients   = "#{attendee.email}"
-      @bcc          = "team@zoomtype.info"
-      @from         = "KungfuRails 09组委会<account@zoomtype.info>"
+      @from         = "KungfuRails组委会 <support@kungfurails.com>"
       @subject      = "[KungfuRails 09] "
       @sent_on      = Time.now
       @content_type = "text/html"

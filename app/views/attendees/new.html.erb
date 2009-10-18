@@ -7,7 +7,10 @@ jQuery(document).ready(function($) {
 <% end -%>           
 <h1><%= t :registion %></h1> 
 <%= render :partial => '/shared/regnotice'%>
-<div class='reg_form'>
+<div class='reg_form'>  
+  <p style='text-align:center;'>
+	<a href='#'>门票120元一张,21号之前支付优惠20元,团购在此基础上打8折.参会费每人50元.</a>
+  </p>
 <% form_for(@attendee) do |f| %>
   <%= f.error_messages %>
   <fieldset style='width:529px;'>
@@ -88,34 +91,37 @@ jQuery(document).ready(function($) {
     <%= f.label :description, t('description') %>
     <%= f.text_area :description %>
   </p> 
-  <fieldset class="fieldset"> 
-	<legend>大型自助晚餐会</legend>           
-	<p>为了让与会者能更好的交流,我们会在会议当晚举办一场大型的自助式晚餐会,要参加此餐会,需额外支付50元晚餐会费用.</p>
+    <fieldset class="fieldset"> 
+	<legend>团购</legend>           
+	<p>团购2张起,8折优惠</p>
   <p>
-    <%= f.label :join_party, '是否参加餐费' %>
-    <%= f.check_box :join_party,{:id => 'party',:onclick => "change_total_fee();" } %>
+    <%= f.label :number, '购买张数' %>
+    <%= f.text_field :number,:value => 1 %>
   </p>
-  </fieldset> 
+  </fieldset>
   <fieldset class="fieldset"> 
 	<legend>发票信息</legend> 
   <p>
     <%= f.label :need_invoice, '是否需要发票' %>
     <%= f.check_box :need_invoice,{:id => 'invoce',:onclick => 'invoce_items();' } %>
   </p>
-  
   <p class='invoce_item'>
     <%= f.label :invoice_header, '发票抬头' %>
     <%= f.text_field :invoice_header %>
   </p>
-  
   <p class='invoce_item'>
     <%= f.label :invoice_address, '发票邮寄地址' %>
     <%= f.text_field :invoice_address, :size => '48' %>
   </p> 
   </fieldset> 
-    <p style='text-align:center;'>
-	<a href='#' id='fee_notice'>费用提示:你需要支付120门票费用,此门票已包含午餐费用.</a>
+  <fieldset class="fieldset"> 
+	<legend>大型自助晚餐会</legend>           
+	<p>为了让与会者能更好的交流,我们会在会议当晚举办一场大型的自助式晚餐会,要参加此餐会,需额外支付50元晚餐会费用.</p>
+  <p>
+    <%= f.label :join_party, '是否参加餐费' %>
+    <%= f.check_box :join_party,{:id => 'party',:onclick => "change_total_fee(50);" } %>
   </p>
+  </fieldset> 
   <center>
     <p>                                      
 	<% if params[:locale] == 'en' -%>
