@@ -24,16 +24,16 @@
 您可选择以下上次付款
 <h4 class='payment'>财付通在线付款</h4>
 <p>如果您有网上银行或者财付通帐户，可以通过财付通在线支付直接付款给我们.<%= link_to '通过财付通支付', start_pay_attendee_path(@attendee),:id => 'start_pay', :target => '_blank' %>  </p>
-<% unless @attendee.number > 1 -%>
+
 <h4 class='payment'>通过淘宝购买</h4>
-<p>如果您有淘宝帐户，也可以选择通过淘宝网进行购买. 
+<p>如果您有淘宝帐户，也可以选择通过淘宝网进行购买. 团购请联系我们为您修改价格(GTalk: zhangyuanyi AT gmail DOT com)
 	<% if @attendee.join_party -%>
 	<%= link_to '进入淘宝网购买页面', 'http://item.taobao.com/auction/item_detail.jhtml?x_id=0db1&item_id=c48cd74539c140543310bc71bc972a32',:target => '_blank' %>  
 	<% else -%>
 <%= link_to '进入淘宝网购买页面', 'http://item.taobao.com/auction/item_detail.jhtml?x_id=0db1&item_id=d39425d03bdafd83e0c43f0c96437829',:target => '_blank' %> 
 <% end -%></p> 
 <small>(请在汇款人信息里注明你的用户名和参会编号)</small>  
-<% end -%>
+
 <h4 class='payment'>银行汇款</h4>
 <p>您也可以通过银行直接转账给我们，以下为帐户信息</p>
 <p>帐户号：9555 5002 1679 0641<br />
