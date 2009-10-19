@@ -93,7 +93,7 @@ class AttendeesController < ApplicationController
         tenpay_request = Tenpay::Request.new( 
                 'KungfuRails 2009大会门票',
                 @attendee.id,
-                @template.discount_price(@template.total_fee(@attendee)),
+                @template.total_fee(@attendee),
                 finish_pay_attendee_url(@attendee, :host => request.host_with_port),
                 request.remote_ip
                 )

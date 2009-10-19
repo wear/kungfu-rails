@@ -4,7 +4,6 @@ module AttendeesHelper
     attendee.join_party ? (TICKET_PRICE + 5000)*attendee.number : TICKET_PRICE*attendee.number
   end                          
   
-module AttendeesHelper
   def total_fee(attendee)
     price = discount_price(TICKET_PRICE)
     if attendee.number > 1
