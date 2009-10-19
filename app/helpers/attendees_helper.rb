@@ -3,7 +3,7 @@ module AttendeesHelper
     unless attendee.number > 1
      attendee.join_party ? (discount_price(TICKET_PRICE) + 5000) : TICKET_PRICE
    else
-     attendee.join_party ? (discount_price(TICKET_PRICE)*0.8 + 5000)*attendee.number : TICKET_PRICE
+     attendee.join_party ? (discount_price(TICKET_PRICE)*0.8 + 5000)*attendee.number : (TICKET_PRICE * attendee.number)
    end  
   end  
   
