@@ -18,7 +18,7 @@
   <br />  购买张数:<b><%= @attendee.number %>张</b>
 <% end -%>
 <br />
-  <strong>您的待支付金额为:<%=total_fee(@attendee)/100%>元</strong><br />我们会在您完成支付后向您发送会议电子门票及其它参会信息。<br />
+  <strong>您的待支付金额为:<%=origin_total_fee(@attendee)/100%>,打折后的价格是<%=total_fee(@attendee)/100%>元</strong><br />我们会在您完成支付后向您发送会议电子门票及其它参会信息。<br />
 </p>
 <h2>付费方式</h2>
 您可选择以下上次付款

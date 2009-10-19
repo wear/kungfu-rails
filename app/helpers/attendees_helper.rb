@@ -1,4 +1,9 @@
-module AttendeesHelper
+module AttendeesHelper      
+  
+  def origin_total_fee(attendee)
+    attendee.join_party ? (TICKET_PRICE + 5000)*attendee.number : TICKET_PRICE*attendee.number
+  end                          
+  
   def total_fee(attendee)                       
     unless attendee.number > 1
      attendee.join_party ? (discount_price(TICKET_PRICE) + 5000) : TICKET_PRICE
