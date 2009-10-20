@@ -273,6 +273,7 @@ a.buy {
    margin:10px;padding:10px;border:1px solid #ccc; 
 }
 
-.logo-list li{
+.logo-list li{ 
+	list-style:none;
 	float:right;
 }
