@@ -24,7 +24,7 @@ a:hover{
 	margin:0 auto;
 }
 
-ul li{list-style:none;}         
+    
 
 #logo{
 	text-align:center;
@@ -36,7 +36,8 @@ ul li{list-style:none;}
 
 
 #menu ul li{  
-	float:left;
+	float:left; 
+	list-style:none;
 }         
 
 #menu a{ 
@@ -111,7 +112,9 @@ h4.payment{
    top: -80px; left: -110px;
 }
 
-.bio img{
+.bio img{    
+	width:61px;
+	height:62px;
 	float:left;
 	margin:0px 10px 1px 0px;
 }  
