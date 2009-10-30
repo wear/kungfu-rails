@@ -32,8 +32,8 @@
 	<td><%=link_to attendee.id,attendee %></td>
     <td><%=h attendee.name %></td>
     <td><%=h attendee.title %></td>
-    <td><%=h attendee.company %></td>
-    <td><%=h attendee.city %></td>
+    <td><%=h attendee.invoice_header %></td>
+    <td><%=h attendee.phone_number %></td>
 	<td><%= attendee.need_invoice ? '需要' : '不需要'%></td> 
 	<td>><%= attendee.join_party ? '参加' : '不参加'%></td> 
 	<td ><%= attendee.paid ? '已支付' : '未支付' %> － <%=link_to('设置支付',edit_payment_attendee_path(attendee),:rel => 'facebox')  %></td>
