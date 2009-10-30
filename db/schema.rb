@@ -58,6 +58,15 @@ ActiveRecord::Schema.define(:version => 20090420130416) do
     t.datetime "remember_token_expires_at"
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
+  end     
+  
+  create_table :speakers do |t|
+    
+    t.string :name
+    t.string :title
+    t.text :desc
+    t.string :avatar
+    t.timestamps
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

@@ -110,6 +110,10 @@ h4.payment{
    font-size:14px;
    position:relative;
    top: -80px; left: -110px;
+} 
+
+.bio{
+	width:530px;
 }
 
 .bio img{    
@@ -117,7 +121,17 @@ h4.payment{
 	height:62px;
 	float:left;
 	margin:0px 10px 1px 0px;
-}  
+}   
+
+.res{
+	padding-left:100px;
+	border-bottom:1px solid #eee;
+} 
+
+.res a{
+ 	font-weight:bold;
+	color:red;
+}
 
 #demo{display:block;width:400px;height:335px;}
 #demo{float:left;}
@@ -164,7 +178,7 @@ fieldset select{
 }
 
 .reg_form{
-	float:right;
+	margin-left:120px;
 }  
 
 .reg_notice{
@@ -247,25 +261,25 @@ table.sortable th { padding: 4px; white-space: nowrap;}
 a.buy {
   display: inline-block;
   text-align: center;
-  font: 31px helvetica, arial, sans-serif;
+  font: 14px helvetica, arial, sans-serif;
   font-weight: bold;
   text-decoration: none;
-  border: solid 3px #262;
-  background-color: #282;
-  -moz-border-radius: .4em;
+  border: solid 3px #C52C2C;
+  background-color: #E3682F;
+  -moz-border-radius: .2em;
   -webkit-border-radius: .4em;
-  text-shadow: #262 -1px -1px 1px;
+  text-shadow: #000 -1px -1px 1px;
   box-shadow: 2px 2px 4px #666;
   -webkit-box-shadow: 2px 2px 4px #666;
   -moz-box-shadow: 2px 2px 4px #666;
-  padding: 10px 20px;
+  padding: 5px 20px;
   color: #fff; }
   a.buy .info {
     font-weight: normal;
     font-size: 12px;
-    color: #FAE8BD; }
+    color: #fff; }
   a.buy:hover {
-    background-color: #2a2; }
+    background-color: #C52C2C; }
 
 .logo-list{  
 	float:right;
