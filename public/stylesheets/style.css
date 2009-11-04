@@ -113,7 +113,7 @@ h4.payment{
 } 
 
 .bio{
-	width:730px;
+	width:530px;
 }
 
 .bio img{    
@@ -163,7 +163,7 @@ fieldset input {
 }
 
 fieldset select{  
-	border-left: 1px solid #EFEFEF;
+  border-left: 1px solid #EFEFEF;
   font-size:14px;
   background-color: #DBFDFF;   
   width:290px;
@@ -282,13 +282,16 @@ a.buy {
   a.buy:hover {
     background-color: #C52C2C; }
 
-.logo-list{  
-	float:right;
-	width:150px;
-   margin:10px;padding:10px;border:1px solid #ccc; 
-}
+#sidebar{
+   float:right;
+   width:200px;  
+}   
 
-.logo-list li{ 
+.box{       
+   margin:10px;padding:10px; 
+}  
+
+.box li{ 
 	list-style:none;
 	float:right;
 }

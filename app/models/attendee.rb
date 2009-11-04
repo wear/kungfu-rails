@@ -51,7 +51,7 @@ class Attendee < ActiveRecord::Base
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => /\A#{email_name_regex}@#{domain_head_regex}#{domain_tld_regex}\z/i, :message => '格式不正确'
   validates_presence_of :number
-   validates_numericality_of :number,:less_than => 100
+  validates_numericality_of :number,:less_than => 100
   
   before_create :make_slug_url       
   

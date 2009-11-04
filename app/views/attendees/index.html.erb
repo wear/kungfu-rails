@@ -31,7 +31,7 @@
   <tr class="<%= cycle :even, :odd %>" style="<%= attendee.paid ? 'background:red;color:#fff;' : ''%>">
 	<td><%=link_to attendee.id,attendee %></td>
     <td><%=h attendee.name %></td>
-    <td><%=h attendee.title %></td>
+    <td><%=h attendee.email %></td>
     <td><%=h attendee.invoice_header %></td>
     <td><%=h attendee.phone_number %></td>
 	<td><%= attendee.need_invoice ? '需要' : '不需要'%></td> 
