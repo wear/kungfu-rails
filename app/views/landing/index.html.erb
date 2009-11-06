@@ -1,4 +1,32 @@
+	<% content_for :headers do -%>  
+		<link rel="stylesheet" href="/stylesheets/slider.css" type="text/css" media="screen" /> 
 
+		<%= javascript_include_tag 'jquery' %>   
+		<%= javascript_include_tag 'easySlider1.7' %>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function(){	
+				$("#slider").easySlider({
+					auto: true, 
+					continuous: true,
+					pause:	4000,
+					nextId: "slider1next",
+					prevId: "slider1prev"
+				});
+			});
+		</script> 
+	<% end -%>
+	<h1>现场</h1>
+	<div id="slider-content">   
+		 <div id="slider">
+				<ul>				
+					<li><%=image_tag 'pics/banner.jpg'%></li>
+                    <li><%=image_tag 'pics/snap.jpg'%></li>
+					<li><%=image_tag 'pics/rails.jpg'%></li>
+					<li><%=image_tag 'pics/outside.jpg'%></li>        		
+				</ul>
+		</div>
+	</div>
+	<!-- Slideshow HTML -->
 	<h1>演讲视频与ppt</h1> 
 	<div id="sidebar">
 	   	<div class='box'>

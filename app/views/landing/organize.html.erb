@@ -1,20 +1,4 @@
-<% content_for :headers do -%>  
-	<link rel="stylesheet" href="/stylesheets/slider.css" type="text/css" media="screen" /> 
 
-	<%= javascript_include_tag 'jquery' %>   
-	<%= javascript_include_tag 'easySlider1.7' %>
-	<script type="text/javascript" charset="utf-8">
-		$(document).ready(function(){	
-			$("#slider").easySlider({
-				auto: true, 
-				continuous: true,
-				pause:	4000,
-				nextId: "slider1next",
-				prevId: "slider1prev"
-			});
-		});
-	</script> 
-<% end -%> 
 <h1>组织者</h1>
 <%= image_tag 'SOR_logo.jpg',:align=>'LEFT'%> 
 <p>Shanghai Ruby&Rails爱好者论坛是一个非营利的民间组织，创办于2007年 
